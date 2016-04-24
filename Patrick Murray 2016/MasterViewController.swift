@@ -8,27 +8,107 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
+class MasterViewController: UITableViewController, chatViewer {
 
     var detailViewController: DetailViewController? = nil
-    var objects = [AnyObject]()
+    var objects = [ChatMessage]()
+    var responses = [Response]()
+    
+    var footer : UIView = UIView()
+    
+    // MARL: - ChatViewer
+    
+    func newMessage(msg: Message) {
+        objects.append(msg)
+        let indexPathOfLastRow = NSIndexPath(forRow: objects.count - 1, inSection: 0)
+        self.tableView.insertRowsAtIndexPaths([indexPathOfLastRow], withRowAnimation: .Fade)
+        self.tableView.scrollToRowAtIndexPath(indexPathOfLastRow, atScrollPosition: .Bottom, animated: true)
+    }
+    
+    func newResponse(responses: [Response]) -> Response {
+        objects.append(responses.first!)
+        let indexPathOfLastRow = NSIndexPath(forRow: objects.count - 1, inSection: 0)
+        self.tableView.insertRowsAtIndexPaths([indexPathOfLastRow], withRowAnimation: .Fade)
+        self.tableView.scrollToRowAtIndexPath(indexPathOfLastRow, atScrollPosition: .Bottom, animated: true)
+        
+        self.responses = responses
+        self.tableView.reloadData()
+        
+        
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let pvc = storyboard.instantiateViewControllerWithIdentifier("responseVC") as! PMResponsesTableViewController
+//        pvc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+//        pvc.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+//        
+//        pvc.array = responses
+//        
+//        let footer = UIView(frame: CGRect(x: 0, y: 0, width: pvc.tableView.frame.width, height: pvc.tableView.contentSize.height))
+//        
+//        self.tableView.tableFooterView = footer
+//        self.tableView.tableFooterView?.userInteractionEnabled = true
+//        self.tableView.tableFooterView?.frame = footer.frame
+//        
+//        UIView.animateWithDuration(0.33) { 
+//            footer.addSubview(pvc.tableView)
+//        }
+//        
+//        footer.userInteractionEnabled = true
+//        
+//        footer.backgroundColor = .greenColor()
 
+//
+//        self.presentViewController(pvc, animated: true, completion: nil)
+        
+        
+        return responses.first!
+    }
+    
+
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let pvc = storyboard.instantiateViewControllerWithIdentifier("responseVC") as! PMResponsesTableViewController
+        
+        pvc.array = responses
+        
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: pvc.tableView.frame.width, height: pvc.tableView.contentSize.height))
+        
+        self.footer = footerView
+
+        return self.footer
+    }
+
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 100
+    }
+
+
+    
+    
+    // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        self.navigationItem.rightBarButtonItem = addButton
-        if let split = self.splitViewController {
-            let controllers = split.viewControllers
-            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
-        }
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 70.0
+        
+        let inset = UIEdgeInsetsMake(20, 0, 40, 0);
+        tableView.contentInset = inset;
+        
+        let messages = MessagesManager()
+        messages.delegate = self
+        messages.loadMessages()
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        //self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
     }
 
     override func viewWillAppear(animated: Bool) {
-        self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
         super.viewWillAppear(animated)
     }
 
@@ -37,21 +117,14 @@ class MasterViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func insertNewObject(sender: AnyObject) {
-        objects.insert(NSDate(), atIndex: 0)
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-    }
-
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row] as! NSDate
-                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+                let object = objects[indexPath.row]
+                let controller = segue.destinationViewController as! DetailViewController
+                controller.detailItem = object.text
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
@@ -68,10 +141,18 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        
+        let object = objects[indexPath.row]
+        
+        var cell : PMChatTableViewCell
+        if object is Message {
+            cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PMChatTableViewCell
+        } else {
+            cell = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! PMChatTableViewCell
+        }
 
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+        cell.messageLabel!.text = object.text
+        
         return cell
     }
 

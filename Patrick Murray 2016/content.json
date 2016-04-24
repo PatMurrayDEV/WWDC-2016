@@ -1,0 +1,31 @@
+[
+    {
+        "id": 0,
+        "messages": [
+            {
+                "text": "Oh hey there"
+            },
+            {
+                "text": "I guess this means you're using my app…"
+            },
+            {
+                "text": "By the way my name is Pat. I made this app to tell you a little about myself, and show you some things I've built."
+            },
+            {
+                "text": "What would you like to know about first?"
+            }
+        ],
+        "responses": [
+            {
+                "title": "Option 1",
+                "text": "Option 1 - text",
+                "next": 2
+            },
+            {
+                "title": "Option 2",
+                "text": "Option 2 - text",
+                "next": 3
+            }
+        ]
+    }
+]
