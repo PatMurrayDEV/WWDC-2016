@@ -8,82 +8,28 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController, chatViewer {
+class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [ChatMessage]()
-    var responses = [Response]()
+
     
     var footer : UIView = UIView()
     
     // MARL: - ChatViewer
     
-    func newMessage(msg: Message) {
+    func newMessage(msg: ChatMessage) {
         objects.append(msg)
         let indexPathOfLastRow = NSIndexPath(forRow: objects.count - 1, inSection: 0)
-        self.tableView.insertRowsAtIndexPaths([indexPathOfLastRow], withRowAnimation: .Fade)
+        self.tableView.beginUpdates()
+        self.tableView.insertRowsAtIndexPaths([indexPathOfLastRow], withRowAnimation: .Left)
+        self.tableView.endUpdates()
         self.tableView.scrollToRowAtIndexPath(indexPathOfLastRow, atScrollPosition: .Bottom, animated: true)
-    }
-    
-    func newResponse(responses: [Response]) -> Response {
-        objects.append(responses.first!)
-        let indexPathOfLastRow = NSIndexPath(forRow: objects.count - 1, inSection: 0)
-        self.tableView.insertRowsAtIndexPaths([indexPathOfLastRow], withRowAnimation: .Fade)
-        self.tableView.scrollToRowAtIndexPath(indexPathOfLastRow, atScrollPosition: .Bottom, animated: true)
-        
-        self.responses = responses
-        self.tableView.reloadData()
-        
-        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let pvc = storyboard.instantiateViewControllerWithIdentifier("responseVC") as! PMResponsesTableViewController
-//        pvc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
-//        pvc.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-//        
-//        pvc.array = responses
-//        
-//        let footer = UIView(frame: CGRect(x: 0, y: 0, width: pvc.tableView.frame.width, height: pvc.tableView.contentSize.height))
-//        
-//        self.tableView.tableFooterView = footer
-//        self.tableView.tableFooterView?.userInteractionEnabled = true
-//        self.tableView.tableFooterView?.frame = footer.frame
-//        
-//        UIView.animateWithDuration(0.33) { 
-//            footer.addSubview(pvc.tableView)
-//        }
-//        
-//        footer.userInteractionEnabled = true
-//        
-//        footer.backgroundColor = .greenColor()
 
-//
-//        self.presentViewController(pvc, animated: true, completion: nil)
-        
-        
-        return responses.first!
-    }
-    
 
-    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let pvc = storyboard.instantiateViewControllerWithIdentifier("responseVC") as! PMResponsesTableViewController
-        
-        pvc.array = responses
-        
-        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: pvc.tableView.frame.width, height: pvc.tableView.contentSize.height))
-        
-        self.footer = footerView
-
-        return self.footer
+//        self.tableView.scrollToRowAtIndexPath(indexPathOfLastRow, atScrollPosition: .Bottom, animated: false)
     }
 
-    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 100
-    }
-
-
-    
     
     // MARK: - View Lifecycle
 
@@ -97,15 +43,15 @@ class MasterViewController: UITableViewController, chatViewer {
         let inset = UIEdgeInsetsMake(20, 0, 40, 0);
         tableView.contentInset = inset;
         
-        let messages = MessagesManager()
-        messages.delegate = self
-        messages.loadMessages()
+        
         
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         //self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
+        
+        UIView.setAnimationBeginsFromCurrentState(true)
     }
 
     override func viewWillAppear(animated: Bool) {

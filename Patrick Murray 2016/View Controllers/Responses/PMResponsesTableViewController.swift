@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol ResponseProtocol {
+    func responseSelected(selected: Response)
+}
+
 class PMResponsesTableViewController: UITableViewController {
     
     var array : [Response] = []
+    var delegate : ResponseProtocol! = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +24,8 @@ class PMResponsesTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 60.0
         
         self.tableView.scrollEnabled = false;
+        self.tableView.backgroundColor = .greenColor()
+        
 
     }
 
@@ -50,20 +57,15 @@ class PMResponsesTableViewController: UITableViewController {
         return cell
     }
     
-//    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = UIView(frame: CGRectZero)
-//        headerView.userInteractionEnabled = false
-//        return headerView
-//    }
-//    
-//    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return self.tableView.frame.size.height - self.tableView.contentSize.height
-//    }
-//    
-//    func scrollToBottom() {
-//        let offsetY = self.tableView.contentSize.height - self.tableView.frame.size.height + self.tableView.contentInset.bottom;
-//        self.tableView.setContentOffset(CGPointMake(0, offsetY), animated: true)
-//    }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print(indexPath)
+        
+        let response = self.array[indexPath.row]
+        if let delegate = self.delegate {
+            delegate.responseSelected(response)
+        }
+        
+    }
 
 
 }

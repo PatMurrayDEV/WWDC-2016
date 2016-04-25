@@ -1,31 +1,117 @@
-[
-    {
-        "id": 0,
-        "messages": [
-            {
-                "text": "Oh hey there"
-            },
-            {
-                "text": "I guess this means you're using my app…"
-            },
-            {
-                "text": "By the way my name is Pat. I made this app to tell you a little about myself, and show you some things I've built."
-            },
-            {
-                "text": "What would you like to know about first?"
-            }
-        ],
-        "responses": [
-            {
+ [
+  {
+  "id": 100,
+  "messages": [
+               ],
+  "responses": [
+                {
+                "title": "Hello?",
+                "text": "Hello, anyone there?",
+                "next": 0
+                }
+                ]
+  },
+  {
+  "id": 0,
+  "messages": [
+               {
+               "text": "Oh hey there"
+               },
+               {
+               "text": "I guess this means you're using my app…"
+               },
+               {
+               "text": "By the way my name is Pat. I made this app to tell you a little about myself, and show you some things I've built."
+               },
+               {
+               "text": "What would you like to know about first?"
+               }
+               ],
+  "responses": [
+                {
+                "title": "You Personally",
+                "text": "A bit more about you personally, please. Maybe start with education? 🎓",
+                "next": 1
+                },
+                {
+                "title": "Your Hobbies",
+                "text": "A bit more about how you spend your free time, please. Do you have any hobbies? 🏉⛷",
+                "next": 1
+                },
+                {
+                "title": "Your Projects",
+                "text": "A bit more about your personal projects, please. Are you working on anything cool? ⚗🔭📲",
+                "next": 1
+                },
+                {
+                "title": "This App, in particular",
+                "text": "A bit more about this app in particular, thanks. It's an interesting way of structuring this! 📱",
+                "next": 1
+                }
+                ]
+  },
+  {
+  "id": 1,
+  "messages": [
+               {
+               "text": "Ok cool."
+               },
+               {
+               "text": "I'm a full-time student at the University of Technology, Sydney studying a combined Bachelor of Business, Bachelor of Computing."
+               },
+               {
+               "text": "I'm majoring in Marketing (for the Business) and Programming (for the Computing)."
+               },
+               {
+               "text": "You probably could've guessed the programming part 😜"
+               },
+               {
+               "text": "I've recently turned 21 and have completed two and half years of my four year degree."
+               },
+               {
+               "text": "I'm born and raised in the Eastern Suburbs of Sydney, Australia."
+               }
+               ],
+  "responses": [
+                {
                 "title": "Option 1",
                 "text": "Option 1 - text",
                 "next": 2
-            },
-            {
+                },
+                {
                 "title": "Option 2",
                 "text": "Option 2 - text",
                 "next": 3
-            }
-        ]
-    }
-]
+                }
+                ]
+  },
+  {
+  "id": 2,
+  "messages": [
+               {
+               "text": "Ah yeah lots of hobbies, a few too many really hahah"
+               },
+               {
+               "text": "I guess this means you're using my app…"
+               },
+               {
+               "text": "By the way my name is Pat. I made this app to tell you a little about myself, and show you some things I've built."
+               },
+               {
+               "text": "What would you like to know about first?"
+               }
+               ],
+  "responses": [
+                {
+                "title": "Option 1",
+                "text": "Option 1 - text",
+                "next": 2
+                },
+                {
+                "title": "Option 2",
+                "text": "Option 2 - text",
+                "next": 3
+                }
+                ]
+  }
+  ]
