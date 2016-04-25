@@ -38,6 +38,7 @@ class PMContainerViewController: UIViewController, chatViewer, ResponseProtocol 
         
         self.title = "Pat Murray"
         
+
         
         self.messagesManager.delegate = self
         self.messagesManager.loadMessages()
@@ -82,6 +83,10 @@ class PMContainerViewController: UIViewController, chatViewer, ResponseProtocol 
         }
         
         
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
     
     // MARK: - ResponseProtocol

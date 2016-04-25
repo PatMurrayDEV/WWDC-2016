@@ -2,11 +2,32 @@
   {
   "id": 100,
   "messages": [
+               {
+               "help_text": "Say Hi to start ↓"
+               }
                ],
   "responses": [
                 {
                 "title": "Hello?",
                 "text": "Hello, anyone there?",
+                "next": 101
+                }
+                ]
+  },
+  {
+  "id": 101,
+  "messages": [
+               {
+               "text": "Oh hey there"
+               },
+               {
+               "text": "I guess this means you're using my app…"
+               }
+               ],
+  "responses": [
+                {
+                "title": "Yeah, I guess it does",
+                "text": "Yeah, I guess it does.",
                 "next": 0
                 }
                 ]
@@ -15,16 +36,13 @@
   "id": 0,
   "messages": [
                {
-               "text": "Oh hey there"
-               },
-               {
-               "text": "I guess this means you're using my app…"
-               },
-               {
                "text": "By the way my name is Pat. I made this app to tell you a little about myself, and show you some things I've built."
                },
                {
                "text": "What would you like to know about first?"
+               },
+               {
+               "help_text": "If you need help or to restart use the settings cog at the top left ↖ ⚙"
                }
                ],
   "responses": [
@@ -60,6 +78,9 @@
                "text": "I'm a full-time student at the University of Technology, Sydney studying a combined Bachelor of Business, Bachelor of Computing."
                },
                {
+               "image_url": "UTS_FEIT_bldg"
+               },
+               {
                "text": "I'm majoring in Marketing (for the Business) and Programming (for the Computing)."
                },
                {
@@ -89,7 +110,7 @@
   "id": 2,
   "messages": [
                {
-               "text": "Ah yeah lots of hobbies, a few too many really hahah"
+               "text": "Ah yeah lots of hobbies! A few too many really hahaha"
                },
                {
                "text": "I guess this means you're using my app…"

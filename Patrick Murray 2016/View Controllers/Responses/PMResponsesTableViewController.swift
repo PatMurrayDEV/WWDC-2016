@@ -24,9 +24,10 @@ class PMResponsesTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 60.0
         
         self.tableView.scrollEnabled = false;
-        self.tableView.backgroundColor = .greenColor()
         
-
+        self.view.layer.addBorder(.Top, color: UIColor(red:0.17, green:0.24, blue:0.31, alpha:1), thickness: 1)
+        self.tableView.backgroundColor = UIColor(hue:0.53, saturation:0.02, brightness:0.95, alpha:1)
+        
     }
 
     override func didReceiveMemoryWarning() {

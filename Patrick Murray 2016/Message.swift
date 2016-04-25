@@ -44,10 +44,30 @@ struct Response: ChatMessage, Decodable {
 
 struct Message: ChatMessage, Decodable {
     var text: String?
+    var image: UIImage?
+    var helpText: String?
+    
     init?(json: JSON) {
-        self.text = "text" <~~ json
+        
+        if let textContent : String = "text" <~~ json {
+            self.text = textContent
+        }
+        
+        if let helpContent : String = "help_text" <~~ json {
+            self.helpText = helpContent
+        }
+        
+        if let imageURL : String = "image_url" <~~ json {
+            if let imageTemp : UIImage = UIImage(named: imageURL) {
+                self.image = imageTemp
+            }
+        }
+
+        
     }
 }
+
+
 
 
 

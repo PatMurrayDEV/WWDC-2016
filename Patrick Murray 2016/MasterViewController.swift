@@ -19,15 +19,36 @@ class MasterViewController: UITableViewController {
     // MARL: - ChatViewer
     
     func newMessage(msg: ChatMessage) {
+        
+        
+        
         objects.append(msg)
         let indexPathOfLastRow = NSIndexPath(forRow: objects.count - 1, inSection: 0)
-        self.tableView.beginUpdates()
-        self.tableView.insertRowsAtIndexPaths([indexPathOfLastRow], withRowAnimation: .Left)
-        self.tableView.endUpdates()
-        self.tableView.scrollToRowAtIndexPath(indexPathOfLastRow, atScrollPosition: .Bottom, animated: true)
+        
+        var animation : UITableViewRowAnimation
+        if msg is Message {
+            let message = msg as! Message
+            if message.helpText != nil {
+                animation = .Fade
+            } else {
+                animation = .Left
+            }
+        } else {
+            animation = .Right
+        }
 
+        
+        // Transaction
+        CATransaction.begin()
+        tableView.beginUpdates()
+        CATransaction.setCompletionBlock { () -> Void in
+            self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: self.tableView.numberOfRowsInSection(0) - 1, inSection: 0), atScrollPosition: .Middle, animated: true)
+        }
+        self.tableView.insertRowsAtIndexPaths([indexPathOfLastRow], withRowAnimation: animation)
+        tableView.endUpdates()
+        CATransaction.commit()
+        
 
-//        self.tableView.scrollToRowAtIndexPath(indexPathOfLastRow, atScrollPosition: .Bottom, animated: false)
     }
 
     
@@ -38,7 +59,7 @@ class MasterViewController: UITableViewController {
 
         
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 70.0
+        tableView.estimatedRowHeight = 1200.0
         
         let inset = UIEdgeInsetsMake(20, 0, 40, 0);
         tableView.contentInset = inset;
@@ -49,7 +70,6 @@ class MasterViewController: UITableViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        //self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
         
         UIView.setAnimationBeginsFromCurrentState(true)
     }
@@ -89,17 +109,41 @@ class MasterViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let object = objects[indexPath.row]
-        
-        var cell : PMChatTableViewCell
-        if object is Message {
-            cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PMChatTableViewCell
-        } else {
-            cell = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! PMChatTableViewCell
-        }
 
-        cell.messageLabel!.text = object.text
+        if object is Message {
+            let message = object as! Message
+            if let text = message.text {
+                let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PMChatTableViewCell
+                cell.messageLabel!.text = text
+                return cell
+            } else if let image = message.image {
+                let cell = tableView.dequeueReusableCellWithIdentifier("Cell_Image", forIndexPath: indexPath) as! PMImageTableViewCell
+                cell.contentImage.image = image
+                if let height = cell.contentImage.image?.size.height {
+                    if height < 200 {
+                        cell.heightContrainst.constant = height
+                    } else {
+                        cell.heightContrainst.constant = 200
+                    }
+                }
+                return cell
+            } else if let help = message.helpText {
+                let cell = tableView.dequeueReusableCellWithIdentifier("Cell_Help", forIndexPath: indexPath)
+                cell.textLabel?.text = help
+                return cell
+            }
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! PMChatTableViewCell
+            cell.messageLabel!.text = object.text
+            return cell
+        }
         
+        
+        // Else
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! PMChatTableViewCell
+        cell.messageLabel!.text = object.text
         return cell
+
     }
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -114,6 +158,10 @@ class MasterViewController: UITableViewController {
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
 
 
