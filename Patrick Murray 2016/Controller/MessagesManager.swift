@@ -42,7 +42,9 @@ class MessagesManager: NSObject {
         var count = 1.5
         
         for text in section.messages! {
-            let delay = 1 * count * Double(NSEC_PER_SEC)
+//            let delay = 0.5 * count * Double(NSEC_PER_SEC)
+            let delay = 0.9 * count * Double(NSEC_PER_SEC)
+
             let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
             dispatch_after(time, dispatch_get_main_queue()) {
                 self.delegate.newMessage(text)
@@ -51,7 +53,7 @@ class MessagesManager: NSObject {
         }
         
         if let responses = section.responses {
-            let delay = 1 * count * Double(NSEC_PER_SEC)
+            let delay = (count - 1) * Double(NSEC_PER_SEC)
             let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
             
             dispatch_after(time, dispatch_get_main_queue()) {

@@ -131,6 +131,10 @@ class MasterViewController: UITableViewController {
                 let cell = tableView.dequeueReusableCellWithIdentifier("Cell_Help", forIndexPath: indexPath)
                 cell.textLabel?.text = help
                 return cell
+            } else if message.mapLoc != nil {
+                let cell = tableView.dequeueReusableCellWithIdentifier("Cell_Map", forIndexPath: indexPath) as! PMMapTableViewCell
+                cell.loadMap(message.mapLoc!, pitch: message.pitch!, heading: message.heading!, showLandmarks: false, distance: message.distance!)
+                return cell
             }
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! PMChatTableViewCell

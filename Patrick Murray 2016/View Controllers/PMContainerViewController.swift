@@ -73,7 +73,7 @@ class PMContainerViewController: UIViewController, chatViewer, ResponseProtocol 
             self.responseHeightConstraint.constant = self.respVC.tableView.contentSize.height
             UIView.animateWithDuration(0.5) {
                 self.view.layoutIfNeeded()
-                self.mastVC.tableView.layoutIfNeeded()
+                //self.mastVC.tableView.layoutIfNeeded()
             }
             let indexPathOfLastRow = NSIndexPath(forRow: self.mastVC.objects.count - 1, inSection: 0)
             if indexPathOfLastRow.row > 0 {

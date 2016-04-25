@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 struct MessageSection: Decodable {
     
@@ -46,6 +47,10 @@ struct Message: ChatMessage, Decodable {
     var text: String?
     var image: UIImage?
     var helpText: String?
+    var mapLoc: CLLocationCoordinate2D?
+    var pitch: CGFloat?
+    var heading: Double?
+    var distance: Double?
     
     init?(json: JSON) {
         
@@ -62,7 +67,24 @@ struct Message: ChatMessage, Decodable {
                 self.image = imageTemp
             }
         }
-
+        
+        if let long : Double = "longitude" <~~ json {
+            if let lat : Double = "latitude" <~~ json {
+                self.mapLoc = CLLocationCoordinate2DMake(lat, long)
+            }
+        }
+        
+        if let pitchContent : CGFloat = "pitch" <~~ json {
+            self.pitch = pitchContent
+        }
+        
+        if let headingContent : Double = "heading" <~~ json {
+            self.heading = headingContent
+        }
+        
+        if let distance : Double = "distance" <~~ json {
+            self.distance = distance
+        }
         
     }
 }

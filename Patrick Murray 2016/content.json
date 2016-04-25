@@ -75,10 +75,17 @@
                "text": "Ok cool."
                },
                {
+               "image_url": "UTS_FEIT_bldg"
+               },
+               {
                "text": "I'm a full-time student at the University of Technology, Sydney studying a combined Bachelor of Business, Bachelor of Computing."
                },
                {
-               "image_url": "UTS_FEIT_bldg"
+               "latitude": -33.883705,
+               "longitude": 151.200414,
+               "pitch": 45,
+               "heading": 0,
+               "distance": 450
                },
                {
                "text": "I'm majoring in Marketing (for the Business) and Programming (for the Computing)."
@@ -88,21 +95,13 @@
                },
                {
                "text": "I've recently turned 21 and have completed two and half years of my four year degree."
-               },
-               {
-               "text": "I'm born and raised in the Eastern Suburbs of Sydney, Australia."
                }
                ],
   "responses": [
                 {
-                "title": "Option 1",
-                "text": "Option 1 - text",
+                "title": "Where are you from?",
+                "text": "I see you go to UTS, are you originally from Sydney?",
                 "next": 2
-                },
-                {
-                "title": "Option 2",
-                "text": "Option 2 - text",
-                "next": 3
                 }
                 ]
   },
@@ -110,13 +109,17 @@
   "id": 2,
   "messages": [
                {
-               "text": "Ah yeah lots of hobbies! A few too many really hahaha"
+               "text": "Yeah."
                },
                {
-               "text": "I guess this means you're using my app…"
+               "text": "I'm born and raised in the Eastern Suburbs of Sydney, Australia."
                },
                {
-               "text": "By the way my name is Pat. I made this app to tell you a little about myself, and show you some things I've built."
+               "latitude": -33.852222,
+               "longitude": 151.210556,
+               "pitch": 45,
+               "heading": 90,
+               "distance": 750
                },
                {
                "text": "What would you like to know about first?"
