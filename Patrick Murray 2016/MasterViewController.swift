@@ -156,12 +156,12 @@ class MasterViewController: UITableViewController {
     }
 
     
-    override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if cell is PMMapTableViewCell {
-            let mapCell = cell as! PMMapTableViewCell
-            mapCell.applyMapMemoryFix()
-        }
-    }
+//    override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+//        if cell is PMMapTableViewCell {
+//            let mapCell = cell as! PMMapTableViewCell
+//            mapCell.applyMapMemoryFix()
+//        }
+//    }
 
 
 }

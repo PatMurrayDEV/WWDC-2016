@@ -496,18 +496,29 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bVV-pp-vXE">
+                                            <rect key="frame" x="8" y="8" width="300" height="164"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="300" id="Jhs-k4-NMJ"/>
+                                                <constraint firstAttribute="height" priority="750" constant="164" id="uGf-MS-G7U"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="CFH-6A-uH5" firstAttribute="trailing" secondItem="nch-ZR-eaA" secondAttribute="trailingMargin" id="BWy-7e-E1E"/>
                                         <constraint firstItem="1JD-jW-NB6" firstAttribute="bottom" secondItem="nch-ZR-eaA" secondAttribute="bottomMargin" id="TId-rb-nuc"/>
+                                        <constraint firstItem="bVV-pp-vXE" firstAttribute="top" secondItem="nch-ZR-eaA" secondAttribute="topMargin" id="UMD-85-P4G"/>
                                         <constraint firstItem="CFH-6A-uH5" firstAttribute="bottom" secondItem="nch-ZR-eaA" secondAttribute="bottomMargin" id="Z1f-a4-DVL"/>
+                                        <constraint firstItem="bVV-pp-vXE" firstAttribute="bottom" secondItem="nch-ZR-eaA" secondAttribute="bottomMargin" id="bcj-32-WG4"/>
                                         <constraint firstItem="1JD-jW-NB6" firstAttribute="leading" secondItem="nch-ZR-eaA" secondAttribute="leadingMargin" id="gVb-O7-Vp9"/>
+                                        <constraint firstItem="bVV-pp-vXE" firstAttribute="leading" secondItem="nch-ZR-eaA" secondAttribute="leadingMargin" id="irD-uU-N0r"/>
                                         <constraint firstItem="1JD-jW-NB6" firstAttribute="top" secondItem="nch-ZR-eaA" secondAttribute="topMargin" id="oOZ-HC-Y5x"/>
                                         <constraint firstItem="1JD-jW-NB6" firstAttribute="bottom" secondItem="nch-ZR-eaA" secondAttribute="bottomMargin" id="tFg-j0-hlW"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="imagePlaceholder" destination="bVV-pp-vXE" id="fTo-dV-Mkb"/>
                                     <outlet property="mapView" destination="1JD-jW-NB6" id="3fD-cX-wtp"/>
                                 </connections>
                             </tableViewCell>
