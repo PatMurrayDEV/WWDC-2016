@@ -8,12 +8,13 @@
 
 import UIKit
 import MapKit
+import AudioToolbox
 
 class PMMapTableViewCell: UITableViewCell {
     
-    private let maxForceValue: CGFloat = 6.6
+    private let maxForceValue: CGFloat = 6.6 - 1
     
-    @IBOutlet weak var mapView: MKMapView!
+    var mapView: MKMapView?
     @IBOutlet weak var imagePlaceholder: UIImageView!
 
     
@@ -27,36 +28,34 @@ class PMMapTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        mapView.layer.cornerRadius = 20.0
-        mapView.clipsToBounds = true
-        mapView.showsCompass = false;
+        
         
         
         let gesture = ForceGestureRecognizer()
         gesture.addTarget(self, action: #selector(PMMapTableViewCell.backgroundPressed(_:)))
-        self.mapView.addGestureRecognizer(gesture)
+        self.addGestureRecognizer(gesture)
         
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PMMapTableViewCell.handleTap(_:)))
-        gestureRecognizer.numberOfTouchesRequired = 2
-        self.addGestureRecognizer(gestureRecognizer)
+//        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PMMapTableViewCell.handleTap(_:)))
+//        gestureRecognizer.numberOfTouchesRequired = 2
+//        self.addGestureRecognizer(gestureRecognizer)
         
         self.layoutIfNeeded()
         
     }
     
-    func handleTap(gestureRecognizer: UIGestureRecognizer) {
-        
-        let image = UIImage(view: self.mapView)
-        
-//        if let data = UIImagePNGRepresentation(image) {
-//            let filename = getDocumentsDirectory().stringByAppendingPathComponent("map_\(self.mapLoc.latitude)_\(self.mapLoc.longitude).png")
-//            data.writeToFile(filename, atomically: true)
-//            print(filename)
-//        }
-
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        
-    }
+//    func handleTap(gestureRecognizer: UIGestureRecognizer) {
+//        
+//        let image = UIImage(view: self.mapView)
+//        
+////        if let data = UIImagePNGRepresentation(image) {
+////            let filename = getDocumentsDirectory().stringByAppendingPathComponent("map_\(self.mapLoc.latitude)_\(self.mapLoc.longitude).png")
+////            data.writeToFile(filename, atomically: true)
+////            print(filename)
+////        }
+//
+//        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+//        
+//    }
     
     func getDocumentsDirectory() -> NSString {
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
@@ -69,54 +68,109 @@ class PMMapTableViewCell: UITableViewCell {
     }
     
     
-    internal func applyMapMemoryFix() {
+    internal func destroyMap() {
         
-        self.mapView.delegate = nil
+        if mapView != nil {
+            self.mapView!.delegate = nil
+            self.mapView?.removeFromSuperview()
+            self.mapView!.mapType = MKMapType.Standard
+            self.mapView!.showsUserLocation = false
+            self.mapView!.delegate = nil
+            self.mapView!.removeFromSuperview()
+            self.mapView = nil
+        }
         
     }
     
     
     func backgroundPressed(sender: ForceGestureRecognizer) {
         
+        
+        
         if sender.state == .Ended {
+            self.imagePlaceholder.hidden = false
             UIView.animateWithDuration(0.1, animations: {
-                let camera = MKMapCamera(lookingAtCenterCoordinate: self.mapLoc, fromDistance: self.distance, pitch: self.pitch, heading: self.heading)
-                self.mapView.camera = camera
+                self.imagePlaceholder.alpha = 1.0
+                }, completion: { finished in
+                    self.destroyMap()
             })
             return
         }
         
         
-        let camera = MKMapCamera(lookingAtCenterCoordinate: self.mapLoc,
-                                 fromDistance: (self.distance + Double(100 * sender.forceValue/maxForceValue)),
-                                 pitch: (self.pitch + (10 * sender.forceValue/maxForceValue)),
-                                    heading: (self.heading + Double(360 * sender.forceValue/maxForceValue)))
-        self.mapView.camera = camera
+        if sender.forceValue > 1 {
+            if mapView == nil {
+                setUpMap()
+                AudioServicesPlaySystemSound(1520) // CHECK ME 
+                //FIXME:
+            } else {
+                let force = sender.forceValue - 1
+                let camera = MKMapCamera(lookingAtCenterCoordinate: self.mapLoc,
+                                         fromDistance: (self.distance + Double(100 * force/maxForceValue)),
+                                         pitch: (self.pitch + (10 * force/maxForceValue)),
+                                         heading: (self.heading + Double(360 * force/maxForceValue)))
+                self.mapView!.camera = camera
+            }
+            
+        }
+        
+        
+
    
     }
     
     
+    func setUpMap() {
+        
+        mapView = MKMapView()
+        mapView?.frame = imagePlaceholder.frame
+        mapView?.layer.cornerRadius = 20.0
+        mapView?.clipsToBounds = true
+        mapView?.showsCompass = false;
+        mapView!.mapType = .SatelliteFlyover
+        
+        mapView?.showsBuildings = true
+
+
+        let cameraInitial = MKMapCamera(lookingAtCenterCoordinate: self.mapLoc, fromDistance: self.distance, pitch: self.pitch, heading: self.heading)
+        mapView?.camera = cameraInitial
+        
+        
+        UIView.animateWithDuration(0.33, animations: { 
+            self.addSubview(self.mapView!)
+            self.imagePlaceholder.alpha = 0.0
+            }, completion: { finished in
+                self.imagePlaceholder.hidden = true
+        })
+        
+        
+        
+    }
     
     
-    func loadMap(coordinates: CLLocationCoordinate2D, pitch: CGFloat?, heading: Double?, showLandmarks: Bool, distance: Double?) {
+    
+    func loadMap(coordinates: CLLocationCoordinate2D, pitch: CGFloat?, heading: Double?, showLandmarks: Bool, distance: Double?, placeholder: UIImage) {
         
-        if showLandmarks {
-            mapView.mapType = .HybridFlyover
-        } else {
-            mapView.mapType = .SatelliteFlyover
-        }
-        
-        
+//        if showLandmarks {
+//            mapView.mapType = .HybridFlyover
+//        } else {
+//            mapView.mapType = .SatelliteFlyover
+//        }
+//        
+//        
         self.mapLoc = coordinates
         self.pitch = pitch!
         self.heading = heading!
         self.distance = distance!
-    
-        mapView.showsBuildings = true
+//
+//        mapView.showsBuildings = true
+//        
+//        
+//        let cameraInitial = MKMapCamera(lookingAtCenterCoordinate: coordinates, fromDistance: distance!, pitch: pitch!, heading: heading!)
+//        mapView.camera = cameraInitial
         
         
-        let cameraInitial = MKMapCamera(lookingAtCenterCoordinate: coordinates, fromDistance: distance!, pitch: pitch!, heading: heading!)
-        mapView.camera = cameraInitial
+        self.imagePlaceholder.image = placeholder
         
         
         

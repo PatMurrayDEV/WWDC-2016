@@ -51,6 +51,9 @@ struct Message: ChatMessage, Decodable {
     var pitch: CGFloat?
     var heading: Double?
     var distance: Double?
+    var placeholderImage: UIImage?
+    
+    
     
     init?(json: JSON) {
         
@@ -84,6 +87,12 @@ struct Message: ChatMessage, Decodable {
         
         if let distance : Double = "distance" <~~ json {
             self.distance = distance
+        }
+        
+        if let placeholderImageURL : String = "placeholder" <~~ json {
+            if let placeholderImageTemp : UIImage = UIImage(named: placeholderImageURL) {
+                self.placeholderImage = placeholderImageTemp
+            }
         }
         
     }

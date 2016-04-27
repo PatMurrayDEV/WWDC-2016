@@ -111,7 +111,8 @@
         "longitude": 151.200414,
         "pitch": 45,
         "heading": 0,
-        "distance": 450
+        "distance": 450,
+        "placeholder":"UTS_map_placeholder"
       },
       {
         "help_text": "FYI, press with different levels of force to fly around the map!"
@@ -148,7 +149,8 @@
         "longitude": 151.210556,
         "pitch": 45,
         "heading": 90,
-        "distance": 750
+        "distance": 750,
+        "placeholder":"UTS_map_placeholder"
       },
       {
         "text": "What would you like to know about first?"

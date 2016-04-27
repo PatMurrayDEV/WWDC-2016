@@ -10,7 +10,6 @@ import UIKit
 
 class MasterViewController: UITableViewController {
 
-    var detailViewController: DetailViewController? = nil
     var objects = [ChatMessage]()
 
     
@@ -64,6 +63,7 @@ class MasterViewController: UITableViewController {
         let inset = UIEdgeInsetsMake(20, 0, 40, 0);
         tableView.contentInset = inset;
         
+
         
         
     }
@@ -86,15 +86,11 @@ class MasterViewController: UITableViewController {
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row]
-                let controller = segue.destinationViewController as! DetailViewController
-                controller.detailItem = object.text
-                controller.navigationItem.leftItemsSupplementBackButton = true
-            }
-        }
+        
+
     }
+    
+
 
     // MARK: - Table View
 
@@ -133,7 +129,7 @@ class MasterViewController: UITableViewController {
                 return cell
             } else if message.mapLoc != nil {
                 let cell = tableView.dequeueReusableCellWithIdentifier("Cell_Map", forIndexPath: indexPath) as! PMMapTableViewCell
-                cell.loadMap(message.mapLoc!, pitch: message.pitch!, heading: message.heading!, showLandmarks: false, distance: message.distance!)
+                cell.loadMap(message.mapLoc!, pitch: message.pitch!, heading: message.heading!, showLandmarks: false, distance: message.distance!, placeholder: message.placeholderImage!)
                 return cell
             }
         } else {
@@ -162,7 +158,18 @@ class MasterViewController: UITableViewController {
 //            mapCell.applyMapMemoryFix()
 //        }
 //    }
+    
+    
+    
+    
+
+
+
 
 
 }
+
+
+
+
 

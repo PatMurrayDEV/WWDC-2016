@@ -42,13 +42,28 @@ class MessagesManager: NSObject {
         var count = 1.5
         
         for text in section.messages! {
-//            let delay = 0.5 * count * Double(NSEC_PER_SEC)
-            let delay = 0.9 * count * Double(NSEC_PER_SEC)
-
-            let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-            dispatch_after(time, dispatch_get_main_queue()) {
-                self.delegate.newMessage(text)
+            
+            if text.helpText != nil {
+                count = count - 1.4
+                
+                let delay = 1.0 * count * Double(NSEC_PER_SEC)
+                
+                let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+                dispatch_after(time, dispatch_get_main_queue()) {
+                    self.delegate.newMessage(text)
+                }
+                
+            } else {
+                //            let delay = 0.5 * count * Double(NSEC_PER_SEC)
+                let delay = 0.9 * count * Double(NSEC_PER_SEC)
+                
+                let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+                dispatch_after(time, dispatch_get_main_queue()) {
+                    self.delegate.newMessage(text)
+                }
             }
+            
+
             count = count + 1.5
         }
         

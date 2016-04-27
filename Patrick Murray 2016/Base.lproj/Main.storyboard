@@ -22,58 +22,6 @@
             </objects>
             <point key="canvasLocation" x="-38" y="-630"/>
         </scene>
-        <!--Detail-->
-        <scene sceneID="yUG-lL-AsK">
-            <objects>
-                <viewController title="Detail" id="JEX-9P-axG" customClass="DetailViewController" customModule="Patrick_Murray_2016" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SYR-Wa-9uf"/>
-                        <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aLV-kT-KyB">
-                                <rect key="frame" x="0.0" y="64" width="600" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="5gY-X1-lxY"/>
-                                </constraints>
-                            </imageView>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
-                                <rect key="frame" x="20" y="563" width="560" height="17"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="aLV-kT-KyB" secondAttribute="trailing" id="6Yd-I0-udP"/>
-                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="0XM-y9-sOw" secondAttribute="bottom" constant="20" id="Gtl-PJ-SDl"/>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="271.5" id="jWN-iV-94e"/>
-                            <constraint firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" symbolic="YES" id="tHV-ZD-HQj"/>
-                            <constraint firstItem="aLV-kT-KyB" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="urb-ad-XgD"/>
-                            <constraint firstItem="aLV-kT-KyB" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="z3v-K3-c5T"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="jWN-iV-94e"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
-                    <connections>
-                        <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1537" y="185"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="IIW-Cg-evJ">
             <objects>
@@ -86,72 +34,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSO-IY-Lf7" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
-                                <rect key="frame" x="186" y="236" width="229" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="WcD-Rl-Ff9"/>
-                                    <constraint firstAttribute="width" constant="229" id="iyE-m5-Zjj"/>
-                                </constraints>
-                                <state key="normal" title="Clear chat and start again"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                        <color key="value" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6g-Qa-0ba" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
-                                <rect key="frame" x="186" y="281" width="229" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="229" id="05H-FI-bf2"/>
-                                    <constraint firstAttribute="height" constant="37" id="4Y8-Fo-Z7p"/>
-                                </constraints>
-                                <state key="normal" title="See all the messages"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                        <color key="value" red="0.20000000000000001" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Px-ai-ZDr" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
-                                <rect key="frame" x="186" y="326" width="229" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="VCx-2g-noM"/>
-                                    <constraint firstAttribute="width" constant="229" id="zrT-86-h6G"/>
-                                </constraints>
-                                <state key="normal" title="See raw JSON data"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                        <color key="value" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TnS-Ro-ir7">
-                                <rect key="frame" x="20" y="554" width="560" height="38"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1hj-t9-awo">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLl-co-hYz" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="38"/>
-                                        <state key="normal" title="Twitter"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSO-IY-Lf7" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="134"/>
+                                        <state key="normal" title="Clear chat and start again"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                <color key="value" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6g-Qa-0ba" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="134" width="600" height="134"/>
+                                        <state key="normal" title="See all the messages"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                <color key="value" red="0.20000000000000001" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Px-ai-ZDr" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="268" width="600" height="134"/>
+                                        <state key="normal" title="See raw JSON data"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
                                                 <color key="value" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -161,53 +82,65 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Op8-Jv-Pxh" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
-                                        <rect key="frame" x="190" y="0.0" width="180" height="38"/>
-                                        <state key="normal" title="Github"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                <color key="value" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZx-2d-RRd" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
-                                        <rect key="frame" x="380" y="0.0" width="180" height="38"/>
-                                        <state key="normal" title="Website"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                <color key="value" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TnS-Ro-ir7">
+                                        <rect key="frame" x="0.0" y="402" width="600" height="134"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLl-co-hYz" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="134"/>
+                                                <state key="normal" title="Twitter"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                        <color key="value" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Op8-Jv-Pxh" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
+                                                <rect key="frame" x="200" y="0.0" width="200" height="134"/>
+                                                <state key="normal" title="Github"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                        <color key="value" red="0.20000000000000001" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZx-2d-RRd" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
+                                                <rect key="frame" x="400" y="0.0" width="200" height="134"/>
+                                                <state key="normal" title="Website"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                        <color key="value" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="AwR-4D-NZh"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xmD-pH-zoQ" firstAttribute="top" secondItem="TnS-Ro-ir7" secondAttribute="bottom" constant="8" id="5Jr-jh-2Ci"/>
-                            <constraint firstItem="l6g-Qa-0ba" firstAttribute="centerX" secondItem="B6D-BP-8H8" secondAttribute="centerX" id="7Zb-bf-j7K"/>
-                            <constraint firstItem="TnS-Ro-ir7" firstAttribute="leading" secondItem="B6D-BP-8H8" secondAttribute="leadingMargin" id="DCC-GO-Qqm"/>
-                            <constraint firstItem="6Px-ai-ZDr" firstAttribute="top" secondItem="l6g-Qa-0ba" secondAttribute="bottom" constant="8" id="FwT-uH-Smy"/>
-                            <constraint firstItem="l6g-Qa-0ba" firstAttribute="centerY" secondItem="B6D-BP-8H8" secondAttribute="centerY" id="cvg-Ul-P9S"/>
-                            <constraint firstItem="bSO-IY-Lf7" firstAttribute="centerX" secondItem="B6D-BP-8H8" secondAttribute="centerX" id="ifH-CK-dX8"/>
-                            <constraint firstItem="6Px-ai-ZDr" firstAttribute="centerX" secondItem="B6D-BP-8H8" secondAttribute="centerX" id="qQr-QV-sFA"/>
-                            <constraint firstItem="l6g-Qa-0ba" firstAttribute="top" secondItem="bSO-IY-Lf7" secondAttribute="bottom" constant="8" id="xx4-Dw-HDs"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="TnS-Ro-ir7" secondAttribute="trailing" id="zYE-AJ-R0J"/>
+                            <constraint firstItem="1hj-t9-awo" firstAttribute="top" secondItem="2gh-z8-U02" secondAttribute="bottom" id="JGC-gG-mMi"/>
+                            <constraint firstAttribute="trailing" secondItem="1hj-t9-awo" secondAttribute="trailing" id="YMj-t7-4t1"/>
+                            <constraint firstItem="xmD-pH-zoQ" firstAttribute="top" secondItem="1hj-t9-awo" secondAttribute="bottom" id="ZCs-pf-3zx"/>
+                            <constraint firstItem="1hj-t9-awo" firstAttribute="leading" secondItem="B6D-BP-8H8" secondAttribute="leading" id="aJx-wY-0AH"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -471,21 +404,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="satellite" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1JD-jW-NB6">
-                                            <rect key="frame" x="8" y="8" width="300" height="164"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="109" id="5xv-LQ-vBP"/>
-                                                <constraint firstAttribute="height" constant="114" id="UUD-EA-MPg"/>
-                                                <constraint firstAttribute="height" priority="750" constant="164" id="VBm-nH-ayN"/>
-                                                <constraint firstAttribute="width" constant="300" id="yQe-Ds-nvT"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="5xv-LQ-vBP"/>
-                                                    <exclude reference="UUD-EA-MPg"/>
-                                                </mask>
-                                            </variation>
-                                        </mapView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3D Touch" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFH-6A-uH5">
                                             <rect key="frame" x="549" y="146" width="43" height="26"/>
                                             <constraints>
@@ -506,20 +424,15 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="CFH-6A-uH5" firstAttribute="trailing" secondItem="nch-ZR-eaA" secondAttribute="trailingMargin" id="BWy-7e-E1E"/>
-                                        <constraint firstItem="1JD-jW-NB6" firstAttribute="bottom" secondItem="nch-ZR-eaA" secondAttribute="bottomMargin" id="TId-rb-nuc"/>
                                         <constraint firstItem="bVV-pp-vXE" firstAttribute="top" secondItem="nch-ZR-eaA" secondAttribute="topMargin" id="UMD-85-P4G"/>
                                         <constraint firstItem="CFH-6A-uH5" firstAttribute="bottom" secondItem="nch-ZR-eaA" secondAttribute="bottomMargin" id="Z1f-a4-DVL"/>
                                         <constraint firstItem="bVV-pp-vXE" firstAttribute="bottom" secondItem="nch-ZR-eaA" secondAttribute="bottomMargin" id="bcj-32-WG4"/>
-                                        <constraint firstItem="1JD-jW-NB6" firstAttribute="leading" secondItem="nch-ZR-eaA" secondAttribute="leadingMargin" id="gVb-O7-Vp9"/>
                                         <constraint firstItem="bVV-pp-vXE" firstAttribute="leading" secondItem="nch-ZR-eaA" secondAttribute="leadingMargin" id="irD-uU-N0r"/>
-                                        <constraint firstItem="1JD-jW-NB6" firstAttribute="top" secondItem="nch-ZR-eaA" secondAttribute="topMargin" id="oOZ-HC-Y5x"/>
-                                        <constraint firstItem="1JD-jW-NB6" firstAttribute="bottom" secondItem="nch-ZR-eaA" secondAttribute="bottomMargin" id="tFg-j0-hlW"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="imagePlaceholder" destination="bVV-pp-vXE" id="fTo-dV-Mkb"/>
-                                    <outlet property="mapView" destination="1JD-jW-NB6" id="3fD-cX-wtp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
