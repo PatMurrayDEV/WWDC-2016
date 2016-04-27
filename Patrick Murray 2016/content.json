@@ -1,141 +1,203 @@
- [
+[
   {
-  "id": 100,
-  "messages": [
-               {
-               "help_text": "Say Hi to start ↓"
-               }
-               ],
-  "responses": [
-                {
-                "title": "Hello?",
-                "text": "Hello, anyone there?",
-                "next": 101
-                }
-                ]
+    "id": 100,
+    "messages": [
+      {
+        "help_text": "Say Hi to start ↓"
+      }
+    ],
+    "responses": [
+      {
+        "title": "Hello?",
+        "text": "Hello, anyone there?",
+        "next": 101
+      }
+    ]
   },
   {
-  "id": 101,
-  "messages": [
-               {
-               "text": "Oh hey there"
-               },
-               {
-               "text": "I guess this means you're using my app…"
-               }
-               ],
-  "responses": [
-                {
-                "title": "Yeah, I guess it does",
-                "text": "Yeah, I guess it does.",
-                "next": 0
-                }
-                ]
+    "id": 101,
+    "messages": [
+      {
+        "text": "Oh hi!"
+      },
+      {
+        "text": "I guess this means you're using my app…"
+      }
+    ],
+    "responses": [
+      {
+        "title": "Yeah, I guess it does",
+        "text": "Yeah, I guess it does",
+        "next": 0
+      }
+    ]
   },
   {
-  "id": 0,
-  "messages": [
-               {
-               "text": "By the way my name is Pat. I made this app to tell you a little about myself, and show you some things I've built."
-               },
-               {
-               "text": "What would you like to know about first?"
-               },
-               {
-               "help_text": "If you need help or to restart use the settings cog at the top left ↖ ⚙"
-               }
-               ],
-  "responses": [
-                {
-                "title": "You Personally",
-                "text": "A bit more about you personally, please. Maybe start with education? 🎓",
-                "next": 1
-                },
-                {
-                "title": "Your Hobbies",
-                "text": "A bit more about how you spend your free time, please. Do you have any hobbies? 🏉⛷",
-                "next": 1
-                },
-                {
-                "title": "Your Projects",
-                "text": "A bit more about your personal projects, please. Are you working on anything cool? ⚗🔭📲",
-                "next": 1
-                },
-                {
-                "title": "This App, in particular",
-                "text": "A bit more about this app in particular, thanks. It's an interesting way of structuring this! 📱",
-                "next": 1
-                }
-                ]
+    "id": 0,
+    "messages": [
+      {
+        "text": "Cool 😄"
+      },
+      {
+        "text": "So, my name is Pat. I made this app to tell you a little about myself, and show you some things I've built."
+      },
+      {
+        "text": "What would you like to know about first?"
+      },
+      {
+        "help_text": "By the way, if you need help or to restart, use the settings cog at the top left ↖ ⚙"
+      }
+    ],
+    "responses": [
+      {
+        "title": "You Personally",
+        "text": "A bit more about you personally, please. Can I see a photo, please?",
+        "next": 200
+      },
+      {
+        "title": "Your Hobbies",
+        "text": "A bit more about how you spend your free time, please. Do you have any hobbies? 🏉⛷",
+        "next": 1
+      },
+      {
+        "title": "Your Projects",
+        "text": "A bit more about your personal projects, please. Are you working on anything cool? ⚗🔭📲",
+        "next": 1
+      },
+      {
+        "title": "This App, in particular",
+        "text": "A bit more about this app in particular, thanks. It's an interesting way of structuring this! 📱",
+        "next": 1
+      }
+    ]
   },
   {
-  "id": 1,
-  "messages": [
-               {
-               "text": "Ok cool."
-               },
-               {
-               "image_url": "UTS_FEIT_bldg"
-               },
-               {
-               "text": "I'm a full-time student at the University of Technology, Sydney studying a combined Bachelor of Business, Bachelor of Computing."
-               },
-               {
-               "latitude": -33.883705,
-               "longitude": 151.200414,
-               "pitch": 45,
-               "heading": 0,
-               "distance": 450
-               },
-               {
-               "text": "I'm majoring in Marketing (for the Business) and Programming (for the Computing)."
-               },
-               {
-               "text": "You probably could've guessed the programming part 😜"
-               },
-               {
-               "text": "I've recently turned 21 and have completed two and half years of my four year degree."
-               }
-               ],
-  "responses": [
-                {
-                "title": "Where are you from?",
-                "text": "I see you go to UTS, are you originally from Sydney?",
-                "next": 2
-                }
-                ]
+    "id": 200,
+    "messages": [
+      {
+        "text": "Sure! One sec"
+      },
+      {
+        "image_url": "profile_pic_img"
+      },
+      {
+        "text": "This is me on Christmas day last year down at the beach. "
+      }
+    ],
+    "responses": [
+      {
+        "title": "Nice photo!",
+        "text": "Nice photo! So, where do you go to school? 🎓",
+        "next": 201
+      },
+      {
+        "title": "Is that a halo behind you?",
+        "text": "Is that a halo behind you? 😜 Anyway, where do you go to school? 🎓",
+        "next": 201
+      }
+    ]
   },
   {
-  "id": 2,
-  "messages": [
-               {
-               "text": "Yeah."
-               },
-               {
-               "text": "I'm born and raised in the Eastern Suburbs of Sydney, Australia."
-               },
-               {
-               "latitude": -33.852222,
-               "longitude": 151.210556,
-               "pitch": 45,
-               "heading": 90,
-               "distance": 750
-               },
-               {
-               "text": "What would you like to know about first?"
-               }
-               ],
-  "responses": [
-                {
-                "title": "Option 1",
-                "text": "Option 1 - text",
-                "next": 2
-                },
-                {
-                "title": "Option 2",
-                "text": "Option 2 - text",
-                "next": 3
-                }
-                ]
+    "id": 201,
+    "messages": [
+      {
+        "image_url": "UTS_FEIT_bldg"
+      },
+      {
+        "text": "I'm a full-time student at the University of Technology, Sydney studying a combined Bachelor of Business, Bachelor of Computing."
+      },
+      {
+        "latitude": -33.883705,
+        "longitude": 151.200414,
+        "pitch": 45,
+        "heading": 0,
+        "distance": 450
+      },
+      {
+        "help_text": "FYI, press with different levels of force to fly around the map!"
+      },
+      {
+        "text": "I'm majoring in Marketing (for the Business) and Programming (for the Computing)."
+      },
+      {
+        "text": "You probably could've guessed the programming part 😜"
+      },
+      {
+        "text": "I've recently turned 21 and have completed two and half years of my four year degree."
+      }
+    ],
+    "responses": [
+      {
+        "title": "Where are you from?",
+        "text": "I see you go to UTS, are you originally from Sydney?",
+        "next": 2
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "messages": [
+      {
+        "text": "Yeah."
+      },
+      {
+        "text": "I'm born and raised in the Eastern Suburbs of Sydney, Australia."
+      },
+      {
+        "latitude": -33.852222,
+        "longitude": 151.210556,
+        "pitch": 45,
+        "heading": 90,
+        "distance": 750
+      },
+      {
+        "text": "What would you like to know about first?"
+      }
+    ],
+    "responses": [
+      {
+        "title": "Option 1",
+        "text": "Option 1 - text",
+        "next": 2
+      },
+      {
+        "title": "Option 2",
+        "text": "Option 2 - text",
+        "next": 6
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "messages": [
+      {
+        "text": "Yeah."
+      },
+      {
+        "text": "I'm born and raised in the Eastern Suburbs of Sydney, Australia."
+      },
+      {
+        "latitude": -33.852555,
+        "longitude": 151.210576,
+        "pitch": 65,
+        "heading": 180,
+        "distance": 750
+      },
+      {
+        "text": "What would you like to know about first?"
+      }
+    ],
+    "responses": [
+      {
+        "title": "Option 1",
+        "text": "Option 1 - text",
+        "next": 2
+      },
+      {
+        "title": "Option 2",
+        "text": "Option 2 - text",
+        "next": 6
+      }
+    ]
   }
-  ]
+]

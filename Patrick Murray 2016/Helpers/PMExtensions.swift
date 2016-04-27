@@ -36,3 +36,19 @@ extension CALayer {
         self.addSublayer(border)
     }
 }
+
+
+extension UIImage {
+    
+    func renderUIViewToImage(viewToBeRendered:UIView?) -> UIImage {
+        UIGraphicsBeginImageContext((viewToBeRendered?.bounds.size)!)
+        viewToBeRendered!.drawViewHierarchyInRect(viewToBeRendered!.bounds, afterScreenUpdates: true)
+        //viewToBeRendered!.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        
+        let finalImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return finalImage
+    }
+    
+}

@@ -34,11 +34,22 @@ class PMMapTableViewCell: UITableViewCell {
         let gesture = ForceGestureRecognizer()
         gesture.addTarget(self, action: #selector(PMMapTableViewCell.backgroundPressed(_:)))
         self.mapView.addGestureRecognizer(gesture)
+        
+        self.layoutIfNeeded()
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    
+    internal func applyMapMemoryFix() {
+        
+        self.mapView.delegate = nil
+        
+    }
+    
     
     func backgroundPressed(sender: ForceGestureRecognizer) {
         
@@ -59,6 +70,8 @@ class PMMapTableViewCell: UITableViewCell {
     }
     
     
+    
+    
     func loadMap(coordinates: CLLocationCoordinate2D, pitch: CGFloat?, heading: Double?, showLandmarks: Bool, distance: Double?) {
         
         if showLandmarks {
@@ -74,19 +87,10 @@ class PMMapTableViewCell: UITableViewCell {
     
         mapView.showsBuildings = true
         
-        if !self.animated {
-            let cameraInitial = MKMapCamera(lookingAtCenterCoordinate: coordinates, fromDistance: (distance! + 400), pitch: (pitch! - 20), heading: (heading! + 10))
-            mapView.camera = cameraInitial
-            UIView.animateWithDuration(4.0, animations: {
-                let camera = MKMapCamera(lookingAtCenterCoordinate: coordinates, fromDistance: self.distance, pitch: pitch!, heading: heading!)
-                self.mapView.camera = camera
-                }, completion: { complete in
-                    self.animated = complete
-            })
-        } else {
-            let cameraInitial = MKMapCamera(lookingAtCenterCoordinate: coordinates, fromDistance: distance!, pitch: pitch!, heading: heading!)
-            mapView.camera = cameraInitial
-        }
+        
+        let cameraInitial = MKMapCamera(lookingAtCenterCoordinate: coordinates, fromDistance: distance!, pitch: pitch!, heading: heading!)
+        mapView.camera = cameraInitial
+        
         
     }
 

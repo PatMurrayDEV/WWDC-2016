@@ -94,11 +94,12 @@ class PMContainerViewController: UIViewController, chatViewer, ResponseProtocol 
     func responseSelected(selected: Response) {
         self.messagesManager.responseSelected(selected)
         respVC.array = []
+        respVC.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Bottom)
         respVC.tableView.reloadData()
         respVC.tableView.setNeedsDisplay()
         checkConstraints()
-        mastVC.tableView.reloadData()
-        mastVC.tableView.setNeedsDisplay()
+        //mastVC.tableView.reloadData()
+        //mastVC.tableView.setNeedsDisplay()
         
         
     }

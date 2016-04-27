@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
     </dependencies>
     <scenes>
         <!--Master-->
@@ -32,7 +31,7 @@
                         <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aLV-kT-KyB">
@@ -42,7 +41,7 @@
                                 </constraints>
                             </imageView>
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
-                                <rect key="frame" x="20" y="463" width="560" height="17"/>
+                                <rect key="frame" x="20" y="563" width="560" height="17"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" size="system"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -73,7 +72,148 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1485" y="-630"/>
+            <point key="canvasLocation" x="1537" y="185"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IIW-Cg-evJ">
+            <objects>
+                <viewController id="blh-7g-WmV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2gh-z8-U02"/>
+                        <viewControllerLayoutGuide type="bottom" id="xmD-pH-zoQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B6D-BP-8H8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSO-IY-Lf7" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
+                                <rect key="frame" x="186" y="236" width="229" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="WcD-Rl-Ff9"/>
+                                    <constraint firstAttribute="width" constant="229" id="iyE-m5-Zjj"/>
+                                </constraints>
+                                <state key="normal" title="Clear chat and start again"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                        <color key="value" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6g-Qa-0ba" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
+                                <rect key="frame" x="186" y="281" width="229" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="229" id="05H-FI-bf2"/>
+                                    <constraint firstAttribute="height" constant="37" id="4Y8-Fo-Z7p"/>
+                                </constraints>
+                                <state key="normal" title="See all the messages"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                        <color key="value" red="0.20000000000000001" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Px-ai-ZDr" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
+                                <rect key="frame" x="186" y="326" width="229" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="VCx-2g-noM"/>
+                                    <constraint firstAttribute="width" constant="229" id="zrT-86-h6G"/>
+                                </constraints>
+                                <state key="normal" title="See raw JSON data"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                        <color key="value" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TnS-Ro-ir7">
+                                <rect key="frame" x="20" y="554" width="560" height="38"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLl-co-hYz" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="38"/>
+                                        <state key="normal" title="Twitter"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                <color key="value" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Op8-Jv-Pxh" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
+                                        <rect key="frame" x="190" y="0.0" width="180" height="38"/>
+                                        <state key="normal" title="Github"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                <color key="value" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZx-2d-RRd" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
+                                        <rect key="frame" x="380" y="0.0" width="180" height="38"/>
+                                        <state key="normal" title="Website"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                <color key="value" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="AwR-4D-NZh"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xmD-pH-zoQ" firstAttribute="top" secondItem="TnS-Ro-ir7" secondAttribute="bottom" constant="8" id="5Jr-jh-2Ci"/>
+                            <constraint firstItem="l6g-Qa-0ba" firstAttribute="centerX" secondItem="B6D-BP-8H8" secondAttribute="centerX" id="7Zb-bf-j7K"/>
+                            <constraint firstItem="TnS-Ro-ir7" firstAttribute="leading" secondItem="B6D-BP-8H8" secondAttribute="leadingMargin" id="DCC-GO-Qqm"/>
+                            <constraint firstItem="6Px-ai-ZDr" firstAttribute="top" secondItem="l6g-Qa-0ba" secondAttribute="bottom" constant="8" id="FwT-uH-Smy"/>
+                            <constraint firstItem="l6g-Qa-0ba" firstAttribute="centerY" secondItem="B6D-BP-8H8" secondAttribute="centerY" id="cvg-Ul-P9S"/>
+                            <constraint firstItem="bSO-IY-Lf7" firstAttribute="centerX" secondItem="B6D-BP-8H8" secondAttribute="centerX" id="ifH-CK-dX8"/>
+                            <constraint firstItem="6Px-ai-ZDr" firstAttribute="centerX" secondItem="B6D-BP-8H8" secondAttribute="centerX" id="qQr-QV-sFA"/>
+                            <constraint firstItem="l6g-Qa-0ba" firstAttribute="top" secondItem="bSO-IY-Lf7" secondAttribute="bottom" constant="8" id="xx4-Dw-HDs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TnS-Ro-ir7" secondAttribute="trailing" id="zYE-AJ-R0J"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UoQ-lG-dK4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-913" y="925"/>
         </scene>
         <!--Container View Controller-->
         <scene sceneID="cQf-bd-AGx">
@@ -114,7 +254,13 @@
                             <constraint firstItem="gvx-cY-5BF" firstAttribute="leading" secondItem="SpQ-IA-olO" secondAttribute="leading" id="ycD-pg-aku"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Y31-iH-e3Q"/>
+                    <navigationItem key="navigationItem" id="Y31-iH-e3Q">
+                        <barButtonItem key="leftBarButtonItem" title="⚙" id="XHN-dn-3Bl">
+                            <connections>
+                                <segue destination="blh-7g-WmV" kind="show" id="Mvn-K5-aT5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bottomLayoutConstraint" destination="CsE-BS-KZq" id="pow-iz-aUS"/>
                         <outlet property="container" destination="gvx-cY-5BF" id="esc-lE-zOc"/>
@@ -182,13 +328,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TON-4B-7R5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="415"/>
+            <point key="canvasLocation" x="-60" y="763"/>
         </scene>
         <!--Master-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
                 <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="Patrick_Murray_2016" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="180" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -231,10 +377,6 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="messageLabel" destination="vKd-nZ-4NU" id="Mt8-ZF-NzE"/>
-                                    <segue destination="JEX-9P-axG" kind="show" identifier="showDetail" id="BRm-wQ-yZr">
-                                        <segue key="commit" inheritsFrom="parent" id="oMR-gS-1A8"/>
-                                        <segue key="preview" inheritsFrom="commit" id="ZE5-xy-f6U"/>
-                                    </segue>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell2" rowHeight="48" id="vSX-w2-VKj" customClass="PMChatTableViewCell" customModule="Patrick_Murray_2016" customModuleProvider="target">
@@ -329,13 +471,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1JD-jW-NB6">
+                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="satellite" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1JD-jW-NB6">
                                             <rect key="frame" x="8" y="8" width="300" height="164"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="109" id="5xv-LQ-vBP"/>
-                                                <constraint firstAttribute="height" priority="750" constant="164" id="RSw-Ye-6Xe"/>
                                                 <constraint firstAttribute="height" constant="114" id="UUD-EA-MPg"/>
-                                                <constraint firstAttribute="width" constant="300" id="fie-2l-13d"/>
+                                                <constraint firstAttribute="height" priority="750" constant="164" id="VBm-nH-ayN"/>
+                                                <constraint firstAttribute="width" constant="300" id="yQe-Ds-nvT"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -356,11 +498,12 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="1JD-jW-NB6" firstAttribute="bottom" secondItem="nch-ZR-eaA" secondAttribute="bottomMargin" id="20p-qx-Vts"/>
                                         <constraint firstItem="CFH-6A-uH5" firstAttribute="trailing" secondItem="nch-ZR-eaA" secondAttribute="trailingMargin" id="BWy-7e-E1E"/>
-                                        <constraint firstItem="1JD-jW-NB6" firstAttribute="leading" secondItem="nch-ZR-eaA" secondAttribute="leadingMargin" id="NbM-dC-cMz"/>
-                                        <constraint firstItem="1JD-jW-NB6" firstAttribute="top" secondItem="nch-ZR-eaA" secondAttribute="topMargin" id="Ndj-Wj-tzE"/>
+                                        <constraint firstItem="1JD-jW-NB6" firstAttribute="bottom" secondItem="nch-ZR-eaA" secondAttribute="bottomMargin" id="TId-rb-nuc"/>
                                         <constraint firstItem="CFH-6A-uH5" firstAttribute="bottom" secondItem="nch-ZR-eaA" secondAttribute="bottomMargin" id="Z1f-a4-DVL"/>
+                                        <constraint firstItem="1JD-jW-NB6" firstAttribute="leading" secondItem="nch-ZR-eaA" secondAttribute="leadingMargin" id="gVb-O7-Vp9"/>
+                                        <constraint firstItem="1JD-jW-NB6" firstAttribute="top" secondItem="nch-ZR-eaA" secondAttribute="topMargin" id="oOZ-HC-Y5x"/>
+                                        <constraint firstItem="1JD-jW-NB6" firstAttribute="bottom" secondItem="nch-ZR-eaA" secondAttribute="bottomMargin" id="tFg-j0-hlW"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -379,10 +522,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="-630"/>
+            <point key="canvasLocation" x="761" y="185"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="BRm-wQ-yZr"/>
-    </inferredMetricsTieBreakers>
 </document>
