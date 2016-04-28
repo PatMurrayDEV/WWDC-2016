@@ -140,6 +140,12 @@ class MessagesManager: NSObject {
         
         if selected.next == 100 {
             self.delegate.clearScreen()
+            print(selected.title)
+            let delay = 0.5 * Double(NSEC_PER_SEC)
+            let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+            dispatch_after(time, dispatch_get_main_queue()) {
+                self.nextSection(selected.next!)
+            }
         } else {
             print(selected.title)
             let delay = 0.5 * Double(NSEC_PER_SEC)
