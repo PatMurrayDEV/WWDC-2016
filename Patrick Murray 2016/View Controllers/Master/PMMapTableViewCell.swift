@@ -101,8 +101,8 @@ class PMMapTableViewCell: UITableViewCell {
         if sender.forceValue > 1 {
             if mapView == nil {
                 setUpMap()
-                AudioServicesPlaySystemSound(1520) // CHECK ME 
-                //FIXME:
+//                AudioServicesPlaySystemSound(1/5/2/0)
+                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             } else {
                 let force = sender.forceValue - 1
                 let camera = MKMapCamera(lookingAtCenterCoordinate: self.mapLoc,

@@ -21,13 +21,13 @@
         "text": "Oh hi!"
       },
       {
-        "text": "I guess this means you're using my app…"
+        "text": "I guess this means you're using my app then…"
       }
     ],
     "responses": [
       {
-        "title": "Yeah, I guess it does",
-        "text": "Yeah, I guess it does",
+        "title": "Yeah, I suppose it does",
+        "text": "Yeah, I suppose it does",
         "next": 0
       }
     ]
@@ -51,23 +51,23 @@
     "responses": [
       {
         "title": "You Personally",
-        "text": "A bit more about you personally, please. Can I see a photo, please?",
+        "text": "A bit more about you personally. Can I see a photo, please?",
         "next": 200
       },
       {
         "title": "Your Hobbies",
         "text": "A bit more about how you spend your free time, please. Do you have any hobbies? 🏉⛷",
-        "next": 1
+        "next": 200
       },
       {
         "title": "Your Projects",
         "text": "A bit more about your personal projects, please. Are you working on anything cool? ⚗🔭📲",
-        "next": 1
+        "next": 200
       },
       {
         "title": "This App, in particular",
         "text": "A bit more about this app in particular, thanks. It's an interesting way of structuring this! 📱",
-        "next": 1
+        "next": 200
       }
     ]
   },
@@ -82,23 +82,49 @@
       },
       {
         "text": "This is me on Christmas day last year down at the beach. "
+      },
+      {
+        "text": "Want another?"
       }
     ],
     "responses": [
       {
-        "title": "Nice photo!",
-        "text": "Nice photo! So, where do you go to school? 🎓",
+        "title": "Yeah for sure!",
+        "text": "Yeah for sure! Let's have another!",
         "next": 201
       },
       {
-        "title": "Is that a halo behind you?",
-        "text": "Is that a halo behind you? 😜 Anyway, where do you go to school? 🎓",
-        "next": 201
+        "title": "No thanks",
+        "text": "No thanks. Anyway, where do you go to school? 🎓",
+        "next": 210
       }
     ]
   },
   {
     "id": 201,
+    "messages": [
+      {
+        "image_url": "profile_pic_img2"
+      },
+      {
+        "text": "I'm trying to get my motorcycle license, this is me and my dad the other day going for a slow ride around. "
+      }
+    ],
+    "responses": [
+      {
+        "title": "Nice photo!",
+        "text": "Nice photo!\nSo, where do you go to school? 🎓",
+        "next": 210
+      },
+      {
+        "title": "Vroom Vroom! 🏍🏍",
+        "text": "Vroom Vroom! 🏍🏍\nUh anyway, where do you go to school? 🎓",
+        "next": 210
+      }
+    ]
+  },
+  {
+    "id": 210,
     "messages": [
       {
         "image_url": "UTS_FEIT_bldg"
@@ -112,10 +138,10 @@
         "pitch": 45,
         "heading": 0,
         "distance": 450,
-        "placeholder":"UTS_map_placeholder"
+        "placeholder": "UTS_map_placeholder"
       },
       {
-        "help_text": "FYI, press with different levels of force to fly around the map!"
+        "help_text": "Press with different levels of force to fly around the map! (Keep your finger on the screen and adjust your force, you'll get the hang of it I'm sure 🙂)"
       },
       {
         "text": "I'm majoring in Marketing (for the Business) and Programming (for the Computing)."
@@ -129,20 +155,78 @@
     ],
     "responses": [
       {
+        "title": "Plans for the rest of the degree?",
+        "text": "What's your plan for the last year and a half of your degree?",
+        "next": 211
+      },
+      {
         "title": "Where are you from?",
         "text": "I see you go to UTS, are you originally from Sydney?",
-        "next": 2
+        "next": 213
       }
     ]
   },
   {
-    "id": 2,
+    "id": 211,
+    "messages": [
+      {
+        "text": "Pending final approval (fingers crossed), I will be spending next semester studying abroad. "
+      },
+      {
+        "text": "I have applied to George Mason University, in Fairfax Virginia, to study one semester of IT and computer science."
+      },
+      {
+        "text": "After that I have one year left of my degree at UTS"
+      }
+    ],
+    "responses": [
+      {
+        "title": "Any out of school learning?",
+        "text": "Have you done any notable out of school learning?",
+        "next": 212
+      },
+      {
+        "title": "Where are you from?",
+        "text": "I see you go to UTS, are you originally from Sydney?",
+        "next": 213
+      }
+    ]
+  },
+  {
+    "id": 212,
+    "messages": [
+      {
+        "text": "At the end of 2014 I was selected to attend the PricewaterhouseCoopers Technology Academy Program."
+      },
+      {
+        "text": "Last year I attended WWDC on a scholarship where I learnt more in a week than I had in the four years prior."
+      },
+      {
+        "text": "I also attend the month CocoaHeads Sydney meetups where I learn from the best in Sydney in our field. "
+      },
+      {
+        "text": "I've also made a tonne of friends through Cocoaheads."
+      }
+    ],
+    "responses": [
+      {
+        "title": "Where are you from?",
+        "text": "I see you go to UTS, are you originally from Sydney?",
+        "next": 213
+      }
+    ]
+  },
+  {
+    "id": 213,
     "messages": [
       {
         "text": "Yeah."
       },
       {
         "text": "I'm born and raised in the Eastern Suburbs of Sydney, Australia."
+      },
+      {
+        "text": "Somewhat close to this:"
       },
       {
         "latitude": -33.852222,
@@ -150,7 +234,7 @@
         "pitch": 45,
         "heading": 90,
         "distance": 750,
-        "placeholder":"UTS_map_placeholder"
+        "placeholder": "bridge_map_placeholder"
       },
       {
         "text": "What would you like to know about first?"
@@ -159,47 +243,44 @@
     "responses": [
       {
         "title": "Option 1",
-        "text": "Option 1 - text",
+        "text": "What's your background in computing?",
         "next": 2
-      },
-      {
-        "title": "Option 2",
-        "text": "Option 2 - text",
-        "next": 6
       }
     ]
   },
   {
-    "id": 6,
+    "id": 214,
     "messages": [
       {
-        "text": "Yeah."
+        "text": "I started working with HTML creating small websites when I was 12, in 2007, and from there began to discover other ways of interacting with computers."
       },
       {
-        "text": "I'm born and raised in the Eastern Suburbs of Sydney, Australia."
+        "text": "My father taught me Microsoft DOS and all the ways small scripts could make life easier."
       },
       {
-        "latitude": -33.852555,
-        "longitude": 151.210576,
-        "pitch": 65,
-        "heading": 180,
-        "distance": 750
+        "text": "In 2009 I saved up all my birthday money to buy myself an iPod Touch. Using my love of tinkering and creating I created my first iPhone OS Web App. It was a simple Magic 8 ball and sparked my fascination with software development. "
       },
       {
-        "text": "What would you like to know about first?"
+        "text": "From there I began developing iOS applications and learning to program. I'll tell you more about my projects and hobbies if you'd like?"
       }
     ],
     "responses": [
       {
-        "title": "Option 1",
-        "text": "Option 1 - text",
-        "next": 2
+        "title": "Your Hobbies",
+        "text": "Yeah, your hobbies sounds good thanks 🏉⛷",
+        "next": 300
       },
       {
-        "title": "Option 2",
-        "text": "Option 2 - text",
-        "next": 6
+        "title": "Your Projects",
+        "text": "Yeah, your projects, thanks. Are you working on anything cool? ⚗🔭📲",
+        "next": 400
+      },
+      {
+        "title": "This App, in particular",
+        "text": "A bit more about this app in particular, thanks. It's an interesting way of structuring this! 📱",
+        "next": 500
       }
     ]
-  }
+  },
+  
 ]

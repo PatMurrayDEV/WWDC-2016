@@ -21,13 +21,16 @@ class MessagesManager: NSObject {
     var messages : [MessageSection] = []
     var delegate:chatViewer! = nil
     
+    
+    
+    
     func loadMessages()  {
         if let path = NSBundle.mainBundle().pathForResource("content", ofType: "json") {
             if let jsonData = NSData(contentsOfFile:path) {
                 do {
                     let object = try NSJSONSerialization.JSONObjectWithData(jsonData, options: .AllowFragments)
                     messages = [MessageSection].fromJSONArray(object as! [JSON])
-                    //print(messages)
+                    print(messages)
                     displaySection(messages.first!)
                 } catch {
                     // Handle Error
@@ -44,7 +47,7 @@ class MessagesManager: NSObject {
         for text in section.messages! {
             
             if text.helpText != nil {
-                count = count - 1.4
+                count = count - 1.2
                 
                 let delay = 1.0 * count * Double(NSEC_PER_SEC)
                 
