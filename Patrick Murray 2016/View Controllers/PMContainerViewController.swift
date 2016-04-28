@@ -103,6 +103,12 @@ class PMContainerViewController: UIViewController, chatViewer, ResponseProtocol 
         
         
     }
+    
+    func clearScreen() {
+        
+        self.mastVC.clearScreen()
+
+    }
 
     
 }

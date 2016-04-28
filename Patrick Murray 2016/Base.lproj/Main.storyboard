@@ -22,10 +22,10 @@
             </objects>
             <point key="canvasLocation" x="-38" y="-630"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="IIW-Cg-evJ">
             <objects>
-                <viewController id="blh-7g-WmV" sceneMemberID="viewController">
+                <viewController id="blh-7g-WmV" customClass="SettingsViewController" customModule="Patrick_Murray_2016" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2gh-z8-U02"/>
                         <viewControllerLayoutGuide type="bottom" id="xmD-pH-zoQ"/>
@@ -51,6 +51,9 @@
                                                 <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="clearChatButtonTapped:" destination="blh-7g-WmV" eventType="touchUpInside" id="nqs-P0-6KO"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6g-Qa-0ba" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="134" width="600" height="134"/>
@@ -66,6 +69,9 @@
                                                 <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="seeAllMessagesButtonTapped:" destination="blh-7g-WmV" eventType="touchUpInside" id="iu6-Rq-zdt"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Px-ai-ZDr" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="268" width="600" height="134"/>
@@ -81,6 +87,9 @@
                                                 <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="seeJsonButtonTapped:" destination="blh-7g-WmV" eventType="touchUpInside" id="8tM-hg-Pmp"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TnS-Ro-ir7">
                                         <rect key="frame" x="0.0" y="402" width="600" height="134"/>
@@ -99,6 +108,9 @@
                                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="twitterButtonTapped:" destination="blh-7g-WmV" eventType="touchUpInside" id="YjT-cj-30w"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Op8-Jv-Pxh" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
                                                 <rect key="frame" x="200" y="0.0" width="200" height="134"/>
@@ -114,6 +126,9 @@
                                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="githubButtonTapped:" destination="blh-7g-WmV" eventType="touchUpInside" id="INQ-Uz-pLh"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZx-2d-RRd" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
                                                 <rect key="frame" x="400" y="0.0" width="200" height="134"/>
@@ -129,6 +144,9 @@
                                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="websiteButtonTapped:" destination="blh-7g-WmV" eventType="touchUpInside" id="Ieq-Zs-lH6"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

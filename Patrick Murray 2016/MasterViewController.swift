@@ -18,9 +18,7 @@ class MasterViewController: UITableViewController {
     // MARL: - ChatViewer
     
     func newMessage(msg: ChatMessage) {
-        
-        
-        
+
         objects.append(msg)
         let indexPathOfLastRow = NSIndexPath(forRow: objects.count - 1, inSection: 0)
         
@@ -36,7 +34,6 @@ class MasterViewController: UITableViewController {
             animation = .Right
         }
 
-        
         // Transaction
         CATransaction.begin()
         tableView.beginUpdates()
@@ -46,8 +43,14 @@ class MasterViewController: UITableViewController {
         self.tableView.insertRowsAtIndexPaths([indexPathOfLastRow], withRowAnimation: animation)
         tableView.endUpdates()
         CATransaction.commit()
-        
 
+    }
+    
+    func clearScreen() {
+        
+        objects.removeAll()
+        self.tableView.reloadData()
+        
     }
 
     

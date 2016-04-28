@@ -57,7 +57,7 @@
       {
         "title": "Your Hobbies",
         "text": "A bit more about how you spend your free time, please. Do you have any hobbies? 🏉⛷",
-        "next": 200
+        "next": 300
       },
       {
         "title": "Your Projects",
@@ -199,7 +199,7 @@
         "text": "At the end of 2014 I was selected to attend the PricewaterhouseCoopers Technology Academy Program."
       },
       {
-        "text": "Last year I attended WWDC on a scholarship where I learnt more in a week than I had in the four years prior."
+        "text": "Last year I attended WWDC on a scholarship where I learnt an immeasurable about in a week."
       },
       {
         "text": "I also attend the month CocoaHeads Sydney meetups where I learn from the best in Sydney in our field. "
@@ -237,14 +237,22 @@
         "placeholder": "bridge_map_placeholder"
       },
       {
-        "text": "What would you like to know about first?"
+        "text": "Ok, bit of a lie. I'm actually closer to this: "
+      },
+      {
+        "latitude": -33.914444,
+        "longitude": 151.269948,
+        "pitch": 35,
+        "heading": 80,
+        "distance": 850,
+        "placeholder": "bridge_map_placeholder"
       }
     ],
     "responses": [
       {
-        "title": "Option 1",
+        "title": "What's your background in computing?",
         "text": "What's your background in computing?",
-        "next": 2
+        "next": 214
       }
     ]
   },
@@ -267,7 +275,7 @@
     "responses": [
       {
         "title": "Your Hobbies",
-        "text": "Yeah, your hobbies sounds good thanks 🏉⛷",
+        "text": "Ok, do you have any hobbies? 🏉⛷",
         "next": 300
       },
       {
@@ -282,5 +290,43 @@
       }
     ]
   },
-  
+  {
+    "id": 300,
+    "messages": [
+      {
+        "text": "Yeah a few too many actually hahaha"
+      },
+      {
+        "text": "I love to ski, play piano and take photos."
+      }
+    ],
+    "responses": [
+      {
+        "title": "⛄🎿❄",
+        "text": "⛄🎿❄",
+        "next": 301
+      }
+    ]
+  },
+  {
+    "id": 301,
+    "messages": [
+      {
+        "text": "I have been skiing for most of life and I can’t describe just how free I feel when skiing."
+      },
+      {
+        "text": "In high school I competed in the Sydney Regional and NSW state interschool ski racing competitions. I was also Captain of my school’s team in 2012."
+      },
+      {
+        "image_url": "skiing_photo"
+      }
+    ],
+    "responses": [
+      {
+        "title": "⛄🎿❄",
+        "text": "⛄🎿❄",
+        "next": 301
+      }
+    ]
+  },
 ]
