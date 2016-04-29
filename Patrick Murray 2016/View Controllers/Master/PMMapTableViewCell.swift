@@ -35,27 +35,22 @@ class PMMapTableViewCell: UITableViewCell {
         gesture.addTarget(self, action: #selector(PMMapTableViewCell.backgroundPressed(_:)))
         self.addGestureRecognizer(gesture)
         
-//        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PMMapTableViewCell.handleTap(_:)))
-//        gestureRecognizer.numberOfTouchesRequired = 2
-//        self.addGestureRecognizer(gestureRecognizer)
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PMMapTableViewCell.handleTap(_:)))
+        gestureRecognizer.numberOfTouchesRequired = 2
+        self.addGestureRecognizer(gestureRecognizer)
         
         self.layoutIfNeeded()
         
     }
     
-//    func handleTap(gestureRecognizer: UIGestureRecognizer) {
-//        
-//        let image = UIImage(view: self.mapView)
-//        
-////        if let data = UIImagePNGRepresentation(image) {
-////            let filename = getDocumentsDirectory().stringByAppendingPathComponent("map_\(self.mapLoc.latitude)_\(self.mapLoc.longitude).png")
-////            data.writeToFile(filename, atomically: true)
-////            print(filename)
-////        }
-//
-//        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-//        
-//    }
+    func handleTap(gestureRecognizer: UIGestureRecognizer) {
+        
+        let image = UIImage(view: self.mapView!)
+
+
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        
+    }
     
     func getDocumentsDirectory() -> NSString {
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
