@@ -464,9 +464,6 @@
         "text": "I have also been teaching myself about internet connect devices and have built a little Arduino project to log the climate in my bedroom."
       },
       {
-        "text": "Programming! It may be what I study, and my day-to-day job at my internship, but it's also one of my favourite hobbies! "
-      },
-      {
         "text": "And I've got a bunch of other cool stuff in the pipeline too!"
       }
     ],
@@ -478,15 +475,512 @@
       },
       {
         "title": "Tell me about that successful app",
-        "text": "2010? You were what, 15!? Tell me some more about Gibbs Rules",
+        "text": "2010? You were what, 15!? Tell me some more about Gibbs Rules.",
         "next": 402
       },
       {
-        "title": "Tell me about that successful app",
-        "text": "2010? You were what, 15!? Tell me some more about Gibbs Rules",
+        "title": "What's the temperature in your room?",
+        "text": "Arduinos hey, cool! What's the temperature in your room?",
         "next": 403
       },
-
+      {
+        "title": "Tell me about this future pipeline",
+        "text": "Tell me some more about this future pipeline please.",
+        "next": 404
+      }
     ]
   },
+  {
+    "id": 401,
+    "messages": [
+      {
+        "text": "As part of my internship I'm in a two person iOS team where we're rebuilding a Kiosk app. "
+      },
+      {
+        "text": "On the surface it's a simple enough idea -- an iPad that consumes a REST API to look up customer data. "
+      },
+      {
+        "text": "But the interesting part is in the external accessories: \n· A magnetic card reader\n· A thermal receipt printer  "
+      }
+    ],
+    "responses": [
+      {
+        "title": "Can I see some screenshots?",
+        "text": "Can I see some screenshots?",
+        "next": 4010
+      }
+    ]
+  },
+  {
+    "id": 4010,
+    "messages": [
+      {
+        "text": "OK, I got special permission to show these to your eyes only. The data is mock (obviously)."
+      },
+      {
+        "img_url": "sk_screen1"
+      },
+      {
+        "text": "This is the Dashboard that is shown when the user swipes in."
+      },
+      {
+        "img_url": "sk_screen2"
+      },
+      {
+        "text": "And this is the validation engine I built for the password reset screen."
+      }
+    ],
+    "responses": [
+      {
+        "title": "Reciept Printer?",
+        "text": "Did you say somthing about a reciept Printer?",
+        "next": 4011
+      }
+    ]
+  },
+  {
+    "id": 4011,
+    "messages": [
+      {
+        "text": "Indeed, check this out: "
+      },
+      {
+        "video_url": "IMG_7692.m4v"
+      },
+      {
+        "text": "Cool right?"
+      }
+    ],
+    "responses": [
+      {
+        "title": "Very Cool!",
+        "text": "Very Cool!",
+        "next": 4012
+      }
+    ]
+  },
+  {
+    "id": 4012,
+    "messages": [
+      {
+        "text": "☺"
+      }
+    ],
+    "responses": [
+      {
+        "title": "Tell me about your internship",
+        "text": "Tell me some more about your internship please.",
+        "next": 401
+      },
+      {
+        "title": "Tell me about that successful app",
+        "text": "2010? You were what, 15!? Tell me some more about Gibbs Rules.",
+        "next": 402
+      },
+      {
+        "title": "What's the temperature in your room?",
+        "text": "Arduinos hey, cool! What's the temperature in your room?",
+        "next": 403
+      },
+      {
+        "title": "Tell me about this future pipeline",
+        "text": "Tell me some more about this future pipeline please.",
+        "next": 404
+      },
+      {
+        "title": "That's enough about projects",
+        "text": "Let's switch a bit, what else can you tell me?",
+        "next": 450
+      }
+    ]
+  },
+  {
+    "id": 402,
+    "messages": [
+      {
+        "text": "My first iOS app is Gibbs’ Rules (for NCIS), a companion to the television drama NCIS."
+      },
+      {
+        "text": "Along with being my first released app, it is also my most successful, currently over 250,000 downloads since December 2010."
+      },
+      {
+        "img_url": "gr_1"
+      },
+      {
+        "img_url": "gr_2"
+      },
+      {
+        "link_url": "http://rules.patmurray.co"
+      },
+      {
+        "text": "Want to know more about Gibbs Rules? (Like the awesome iOS technologies included!)"
+      }
+    ],
+    "responses": [
+      {
+        "title": "Yeah sure",
+        "text": "Yes please :D",
+        "next": 4020
+      },
+      {
+        "title": "No thanks",
+        "text": "No thanks",
+        "next": 4021
+      }
+    ]
+  },
+  {
+    "id": 4020,
+    "messages": [
+      {
+        "text": "Cool!"
+      },
+      {
+        "text": "Late last year I decided to release a majr overhaul of the app"
+      },
+      {
+        "text": "It took me a few months to finish, but the new version included awesome new technologies like a full support for Spotlight Search for all the rules and the user's favourite rules"
+      },
+      {
+        "text": "Also, Background refresh (that required I set up a server for the content), and 3D Touch with Peek and Pop"
+      },
+      {
+        "text": "I also decided to add a Tip Jar In App Purchase model to the app, and so far that has been greatly successful"
+      }
+    ],
+    "responses": [
+      {
+        "title": "Do people like it?",
+        "text": "Do people like it?",
+        "next": 4022
+      },
+      {
+        "title": "That's great!",
+        "text": "That's great!",
+        "next": 4022
+      }
+    ]
+  },
+  {
+    "id": 4022,
+    "messages": [
+      {
+        "text": "Yeah people LOVE it!"
+      },
+      {
+        "text": "The most rewarding part of it all is the emails and user feedback I get"
+      },
+      {
+        "text": "And of course the ratings!"
+      },
+      {
+        "text": "The app as a whole has a 4.5 star rating and the current version has a ★★★★★ rating!!"
+      },
+      {
+        "text": "Building apps is awesome, builting apps others love is out of this world!"
+      }
+    ],
+    "responses": [
+      {
+        "title": "Tell me about your internship",
+        "text": "Tell me some more about your internship please.",
+        "next": 401
+      },
+      {
+        "title": "Tell me about that successful app",
+        "text": "2010? You were what, 15!? Tell me some more about Gibbs Rules.",
+        "next": 402
+      },
+      {
+        "title": "What's the temperature in your room?",
+        "text": "Arduinos hey, cool! What's the temperature in your room?",
+        "next": 403
+      },
+      {
+        "title": "Tell me about this future pipeline",
+        "text": "Tell me some more about this future pipeline please.",
+        "next": 404
+      },
+      {
+        "title": "That's enough about projects",
+        "text": "Let's switch a bit, what else can you tell me?",
+        "next": 450
+      }
+    ]
+  },
+  {
+    "id": 4021,
+    "messages": [
+      {
+        "text": "No worries. You can read more about it in my scholarship essay."
+      }
+    ],
+    "responses": [
+      {
+        "title": "Tell me about your internship",
+        "text": "Tell me some more about your internship please.",
+        "next": 401
+      },
+      {
+        "title": "Tell me about that successful app",
+        "text": "2010? You were what, 15!? Tell me some more about Gibbs Rules.",
+        "next": 402
+      },
+      {
+        "title": "What's the temperature in your room?",
+        "text": "Arduinos hey, cool! What's the temperature in your room?",
+        "next": 403
+      },
+      {
+        "title": "Tell me about this future pipeline",
+        "text": "Tell me some more about this future pipeline please.",
+        "next": 404
+      },
+      {
+        "title": "That's enough about projects",
+        "text": "Let's switch a bit, what else can you tell me?",
+        "next": 450
+      }
+    ]
+  },
+  {
+    "id": 403,
+    "messages": [
+      {
+        "text_prefix": "The temperature in my room is: ",
+        "content_url": "http://log.patmurraydev.com/current.php"
+      },
+      {
+        "text": "That's current as of less than fiften minutes ago. "
+      },
+      {
+        "text": "Using this link you can see the log:"
+      },
+      {
+        "link_url": "http://log.patmurraydev.com"
+      },
+      {
+        "text": "Using a starter kit, and a few extra components, my dad and I built a little arduino that logs the temperature and humidity every 15 minutes to my server."
+      },
+      {
+        "live_photo": "IMG_7720"
+      },
+        {
+        "help_text": "That's a live photo, by the way, try 3D Touch it!"
+      }
+    ],
+    "responses": [
+      {
+        "title": "Tell me about your internship",
+        "text": "Tell me some more about your internship please.",
+        "next": 401
+      },
+      {
+        "title": "Tell me about that successful app",
+        "text": "2010? You were what, 15!? Tell me some more about Gibbs Rules.",
+        "next": 402
+      },
+      {
+        "title": "What's the temperature in your room?",
+        "text": "Arduinos hey, cool! What's the temperature in your room?",
+        "next": 403
+      },
+      {
+        "title": "Tell me about this future pipeline",
+        "text": "Tell me some more about this future pipeline please.",
+        "next": 404
+      },
+      {
+        "title": "That's enough about projects",
+        "text": "Let's switch a bit, what else can you tell me?",
+        "next": 450
+      }
+    ]
+  },
+  {
+    "id": 404,
+    "messages": [
+      {
+        "text": "I'm currently building an app for sharing the movies you like with your friends. "
+      },
+      {
+        "text": "Think 'Swarm for movies'. Check it out at Specular.club"
+      },
+      {
+        "link_url": "https://specular.club"
+      },
+      {
+        "text": "I've also been playing around with the Transport for NSW live data for buses and trains trying to come up with a small app I could make there. "
+      }
+    ],
+    "responses": [
+      {
+        "title": "Tell me about your internship",
+        "text": "Tell me some more about your internship please.",
+        "next": 401
+      },
+      {
+        "title": "Tell me about that successful app",
+        "text": "2010? You were what, 15!? Tell me some more about Gibbs Rules.",
+        "next": 402
+      },
+      {
+        "title": "What's the temperature in your room?",
+        "text": "Arduinos hey, cool! What's the temperature in your room?",
+        "next": 403
+      },
+      {
+        "title": "Tell me about this future pipeline",
+        "text": "Tell me some more about this future pipeline please.",
+        "next": 404
+      },
+      {
+        "title": "That's enough about projects",
+        "text": "Let's switch a bit, what else can you tell me?",
+        "next": 450
+      }
+    ]
+  },
+  {
+    "id": 450,
+    "messages": [
+      {
+        "text": "No problem! What else would you like to know?"
+      }
+    ],
+    "responses": [
+      {
+        "title": "You Personally",
+        "text": "A bit more about you personally. Can I see a photo, please?",
+        "next": 200
+      },
+      {
+        "title": "Your Hobbies",
+        "text": "A bit more about how you spend your free time, please. Do you have any hobbies? 🏉⛷",
+        "next": 300
+      },
+      {
+        "title": "Your Projects",
+        "text": "A bit more about your personal projects, please. Are you working on anything cool? ⚗🔭📲",
+        "next": 400
+      },
+      {
+        "title": "This App, in particular",
+        "text": "A bit more about this app in particular, thanks. It's an interesting way of structuring this! 📱",
+        "next": 500
+      },
+      {
+        "title": "Stay in projects",
+        "text": "Oh no, tell me more about projects first",
+        "next": 451
+      }
+    ]
+  },
+  {
+    "id": 451,
+    "messages": [
+      {
+        "text": "Cool "
+      }
+    ],
+    "responses": [
+      {
+        "title": "Tell me about your internship",
+        "text": "Tell me some more about your internship please.",
+        "next": 401
+      },
+      {
+        "title": "Tell me about that successful app",
+        "text": "2010? You were what, 15!? Tell me some more about Gibbs Rules.",
+        "next": 402
+      },
+      {
+        "title": "What's the temperature in your room?",
+        "text": "Arduinos hey, cool! What's the temperature in your room?",
+        "next": 403
+      },
+      {
+        "title": "Tell me about this future pipeline",
+        "text": "Tell me some more about this future pipeline please.",
+        "next": 404
+      },
+      {
+        "title": "Actually, Tell me about something else",
+        "text": "Actually, Tell me about something else",
+        "next": 452
+      }
+    ]
+  },
+  {
+    "id": 452,
+    "messages": [
+      {
+        "text": "No problem! What else would you like to know?"
+      }
+    ],
+    "responses": [
+      {
+        "title": "You Personally",
+        "text": "A bit more about you personally. Can I see a photo, please?",
+        "next": 200
+      },
+      {
+        "title": "Your Hobbies",
+        "text": "A bit more about how you spend your free time, please. Do you have any hobbies? 🏉⛷",
+        "next": 300
+      },
+      {
+        "title": "Your Projects",
+        "text": "A bit more about your personal projects, please. Are you working on anything cool? ⚗🔭📲",
+        "next": 400
+      },
+      {
+        "title": "This App, in particular",
+        "text": "A bit more about this app in particular, thanks. It's an interesting way of structuring this! 📱",
+        "next": 500
+      }
+    ]
+  },
+  {
+    "id": 500,
+    "messages": [
+      {
+        "text": "This app is based on the dialogue engine in the Firewatch game and the 2016 Quartz app for iPhone. "
+      },
+      {
+        "text": "It's taken me over 25 hours in Xcode (according to my time tracker), and surely longer in design. "
+      },
+      {
+        "text": "The 3D touch interactive maps in the personal section were the most difficult to balance discoverability with user experience in load times, and the large memory footprint of the 3D maps."
+      },
+      {
+        "text": "A considerable amount of time was also spent on the UITableView insert animations to ensure the messages scrolled up smoothly. I'm quite happy with it 😃"
+      },
+      {
+        "text": "You can read more about the features and obstacles in my essay. What would you like to know next?"
+      }
+    ],
+    "responses": [
+      {
+        "title": "You Personally",
+        "text": "A bit more about you personally. Can I see a photo, please?",
+        "next": 200
+      },
+      {
+        "title": "Your Hobbies",
+        "text": "A bit more about how you spend your free time, please. Do you have any hobbies? 🏉⛷",
+        "next": 300
+      },
+      {
+        "title": "Your Projects",
+        "text": "A bit more about your personal projects, please. Are you working on anything cool? ⚗🔭📲",
+        "next": 400
+      },
+      {
+        "title": "This App, in particular",
+        "text": "A bit more about this app in particular, thanks. It's an interesting way of structuring this! 📱",
+        "next": 500
+      }
+    ]
+  }
 ]

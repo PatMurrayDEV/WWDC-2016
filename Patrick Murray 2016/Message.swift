@@ -44,14 +44,25 @@ struct Response: ChatMessage, Decodable {
 }
 
 struct Message: ChatMessage, Decodable {
+    //TEXT
     var text: String?
+    
+    //IMAGE
     var image: UIImage?
+    
+    //HELP
     var helpText: String?
+    
+    //MAP
     var mapLoc: CLLocationCoordinate2D?
     var pitch: CGFloat?
     var heading: Double?
     var distance: Double?
     var placeholderImage: UIImage?
+    
+    //LINK
+    var linkURL: 
+    
     
     
     
