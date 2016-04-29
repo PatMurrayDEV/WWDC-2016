@@ -251,7 +251,7 @@
     "responses": [
       {
         "title": "What's your background in computing?",
-        "text": "What's your background in computing?",
+        "text": "So you like programming I take it. What's your background in computing?",
         "next": 214
       }
     ]
@@ -323,9 +323,51 @@
     ],
     "responses": [
       {
-        "title": "⛄🎿❄",
-        "text": "⛄🎿❄",
-        "next": 301
+        "title": "🎹🎶",
+        "text": "🎹🎶",
+        "next": 302
+      }
+    ]
+  },
+  {
+    "id": 302,
+    "messages": [
+      {
+        "text": "I have played the piano since 2002, and while I consider myself pretty good I do mostly play for enjoyment."
+      },
+      {
+        "text": "I have built a small proof of concept iPad app to store my sheet music and chords."
+      },
+      {
+        "image_url": "I would like to polish it off someday and release it to the App Store."
+      }
+    ],
+    "responses": [
+      {
+        "title": "📷📸📷📸",
+        "text": "📷📸📷📸",
+        "next": 303
+      }
+    ]
+  },
+  {
+    "id": 303,
+    "messages": [
+      {
+        "text": "I have played the piano since 2002, and while I consider myself pretty good I do mostly play for enjoyment."
+      },
+      {
+        "text": "I have built a small proof of concept iPad app to store my sheet music and chords."
+      },
+      {
+        "image_url": "I would like to polish it off someday and release it to the App Store."
+      }
+    ],
+    "responses": [
+      {
+        "title": "📷📸📷📸",
+        "text": "📷📸📷📸",
+        "next": 303
       }
     ]
   },
