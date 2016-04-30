@@ -20,14 +20,14 @@ class PMImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        motionView = PanoramaView(frame: self.view.bounds)
+        motionView = PanoramaView(frame: CGRectMake(0, 0, self.view.frame.size.width - 60, self.view.frame.size.height - 90))
         motionView.translatesAutoresizingMaskIntoConstraints = false
         self.containerView.addSubview(motionView)
         
         let views = ["view": containerView, "newView": motionView]
         let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[newView]-0-|", options: NSLayoutFormatOptions.AlignAllCenterY, metrics: nil, views: views)
         containerView.addConstraints(horizontalConstraints)
-        let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[newView]-100-|", options: NSLayoutFormatOptions.AlignAllCenterX, metrics: nil, views: views)
+        let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[newView]-0-|", options: NSLayoutFormatOptions.AlignAllCenterX, metrics: nil, views: views)
         containerView.addConstraints(verticalConstraints)
 
 

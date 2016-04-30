@@ -50,8 +50,8 @@
     ],
     "responses": [
       {
-        "title": "You Personally",
-        "text": "A bit more about you personally. Can I see a photo, please?",
+        "title": "Who are you?",
+        "text": "Tell me a bit more about yourself. Can I see a photo, please?",
         "next": 200
       },
       {
@@ -65,8 +65,8 @@
         "next": 400
       },
       {
-        "title": "This App, in particular",
-        "text": "A bit more about this app in particular, thanks. It's an interesting way of structuring this! 📱",
+        "title": "This App",
+        "text": "A bit more about this app, thanks. It's an interesting way of structuring this! 📱",
         "next": 500
       }
     ]
@@ -150,7 +150,7 @@
         "text": "You probably could've guessed the programming part 😜"
       },
       {
-        "text": "I've recently turned 21 and have completed two and half years of my four year degree."
+        "text": "I've recently turned 21 and have completed two and half years of my four year degree. (Random fact: I share a birthday with Apple!)"
       }
     ],
     "responses": [
@@ -182,7 +182,7 @@
     "responses": [
       {
         "title": "Any out of school learning?",
-        "text": "Have you done any notable out of school learning?",
+        "text": "Have you done any out of school learning?",
         "next": 212
       },
       {
@@ -199,13 +199,13 @@
         "text": "At the end of 2014 I was selected to attend the PricewaterhouseCoopers Technology Academy Program."
       },
       {
-        "text": "Last year I attended WWDC on a scholarship where I learnt an immeasurable about in a week."
+        "text": "Last year I attended WWDC on a scholarship where I learnt an immeasurable amount in a week."
       },
       {
-        "text": "I also attend the month CocoaHeads Sydney meetups where I learn from the best in Sydney in our field. "
+        "text": "I also attend the monthly CocoaHeads Sydney meetups where I learn from the best in Sydney in our field. "
       },
       {
-        "text": "I've also made a tonne of friends through Cocoaheads."
+        "text": "I've also made a tonne of friends through CocoaHeads."
       }
     ],
     "responses": [
@@ -245,7 +245,7 @@
         "pitch": 35,
         "heading": 80,
         "distance": 850,
-        "placeholder": "bridge_map_placeholder"
+        "placeholder": "clovelly_map_placeholder"
       }
     ],
     "responses": [
@@ -260,13 +260,13 @@
     "id": 214,
     "messages": [
       {
-        "text": "I started working with HTML creating small websites when I was 12, in 2007, and from there began to discover other ways of interacting with computers."
+        "text": "I started working with HTML creating small websites when I was 12 and from there began to discover other ways of interacting with computers."
       },
       {
         "text": "My father taught me Microsoft DOS and all the ways small scripts could make life easier."
       },
       {
-        "text": "In 2009 I saved up all my birthday money to buy myself an iPod Touch. Using my love of tinkering and creating I created my first iPhone OS Web App. It was a simple Magic 8 ball and sparked my fascination with software development. "
+        "text": "In 2009 I saved up all my birthday money to buy myself an iPod Touch. Using my love of tinkering and creating, I created my first iPhone OS Web App. It was a simple Magic 8 ball and sparked my fascination with software development. "
       },
       {
         "text": "From there I began developing iOS applications and learning to program. I'll tell you more about my projects and hobbies if you'd like?"
@@ -284,8 +284,8 @@
         "next": 400
       },
       {
-        "title": "This App, in particular",
-        "text": "A bit more about this app in particular, thanks. It's an interesting way of structuring this! 📱",
+        "title": "This App",
+        "text": "I would like to know a bit more about this app, thanks. It's an interesting way of structuring this! 📱",
         "next": 500
       }
     ]
@@ -315,7 +315,7 @@
         "text": "I have been skiing for most of life and I can’t describe just how free I feel when skiing."
       },
       {
-        "text": "In high school I competed in the Sydney Regional and NSW state interschool ski racing competitions. I was also Captain of my school’s team in 2012."
+        "text": "In high school I competed in the Sydney Regional and NSW state interschool ski racing competitions. I was also Captain of my school’s ski team in 2012."
       },
       {
         "image_url": "skiing_photo"
@@ -369,7 +369,7 @@
     "responses": [
       {
         "title": "Can I see your favourite?",
-        "text": "Can I see your favourite, please?",
+        "text": "So what is your favourite?",
         "next": 304
       },
       {
@@ -442,8 +442,8 @@
         "next": 200
       },
       {
-        "title": "This App, in particular",
-        "text": "A bit more about this app in particular, thanks. It's an interesting way of structuring this! 📱",
+        "title": "This App",
+        "text": "Tell me a bit more about app, please. It's an interesting way of structuring this! 📱",
         "next": 500
       }
     ]
@@ -456,6 +456,9 @@
       },
       {
         "text": "For them I have worked on rebuilding the Kiosk project. "
+      },
+      {
+        "text": "I worked on a collection of enterpirse apps for a small student run startup during the later half of last year."
       },
       {
         "text": "I have also continued to progress my most successful, and first (2010), app 'Gibbs Rules (from NCIS)', which has over 250,000 downloads and over 5,000 monthly active users. "
@@ -627,7 +630,7 @@
         "text": "Also, Background refresh (that required I set up a server for the content), and 3D Touch with Peek and Pop"
       },
       {
-        "text": "I also decided to add a Tip Jar In App Purchase model to the app, and so far that has been greatly successful"
+        "text": "I also decided to add a Tip Jar In App Purchase model to the app, and so far that has been very successful"
       }
     ],
     "responses": [
@@ -853,8 +856,8 @@
         "next": 400
       },
       {
-        "title": "This App, in particular",
-        "text": "A bit more about this app in particular, thanks. It's an interesting way of structuring this! 📱",
+        "title": "This App",
+        "text": "A bit more about this app, thanks. It's an interesting way of structuring this! 📱",
         "next": 500
       },
       {
@@ -923,8 +926,8 @@
         "next": 400
       },
       {
-        "title": "This App, in particular",
-        "text": "A bit more about this app in particular, thanks. It's an interesting way of structuring this! 📱",
+        "title": "This App",
+        "text": "A bit more about this app, thanks. It's an interesting way of structuring this! 📱",
         "next": 500
       }
     ]
@@ -939,7 +942,7 @@
         "text": "It's taken me over 25 hours in Xcode (according to my time tracker), and surely longer in design. "
       },
       {
-        "text": "The 3D touch interactive maps in the personal section were the most difficult to balance discoverability with user experience in load times, and the large memory footprint of the 3D maps."
+        "text": "The 3D touch interactive maps were the most difficult to balance discoverability with user experience in load times, and the large memory footprint of the 3D maps."
       },
       {
         "text": "A considerable amount of time was also spent on the UITableView insert animations to ensure the messages scrolled up smoothly. I'm quite happy with it 😃"
@@ -965,8 +968,8 @@
         "next": 400
       },
       {
-        "title": "This App, in particular",
-        "text": "A bit more about this app in particular, thanks. It's an interesting way of structuring this! 📱",
+        "title": "This App",
+        "text": "A bit more about this app, thanks. It's an interesting way of structuring this! 📱",
         "next": 500
       }
     ]
