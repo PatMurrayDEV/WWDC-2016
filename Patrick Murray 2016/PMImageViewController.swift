@@ -21,13 +21,17 @@ class PMImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         motionView = PanoramaView(frame: self.view.bounds)
-        motionView.translatesAutoresizingMaskIntoConstraints = true
+        motionView.translatesAutoresizingMaskIntoConstraints = false
         self.containerView.addSubview(motionView)
         
-        motionView.center = CGPoint(x: containerView.bounds.midX, y: containerView.bounds.midY)
-        motionView.autoresizingMask = [UIViewAutoresizing.FlexibleLeftMargin, UIViewAutoresizing.FlexibleRightMargin, UIViewAutoresizing.FlexibleTopMargin, UIViewAutoresizing.FlexibleBottomMargin]
+        let views = ["view": containerView, "newView": motionView]
+        let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[newView]-0-|", options: NSLayoutFormatOptions.AlignAllCenterY, metrics: nil, views: views)
+        containerView.addConstraints(horizontalConstraints)
+        let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[newView]-100-|", options: NSLayoutFormatOptions.AlignAllCenterX, metrics: nil, views: views)
+        containerView.addConstraints(verticalConstraints)
 
 
+       
         
         containerView.layer.cornerRadius = 10.0
         containerView.clipsToBounds = true

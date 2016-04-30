@@ -8,8 +8,10 @@
 
 import UIKit
 import SafariServices
+import QuickLook
 
-class SettingsViewController: UIViewController {
+
+class SettingsViewController: UIViewController, QLPreviewControllerDataSource, QLPreviewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,16 +26,58 @@ class SettingsViewController: UIViewController {
     
     
     @IBAction func clearChatButtonTapped(sender: AnyObject) {
-        
+        let messagesManager = MessagesManager.sharedInstance
+        let response = Response(json: ["next":100, "text":"Can we start again please?", "title":"Start Again?"])
+        messagesManager.responseSelected(response!);
     }
     
     @IBAction func seeAllMessagesButtonTapped(sender: AnyObject) {
+//        mainMessages
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("mainMessages") as! MasterViewController
+        
+        var objects : [ChatMessage] = [ChatMessage]()
+        
+        for section in MessagesManager.sharedInstance.getAll() {
+            for message in section.messages! {
+                objects.append(message)
+            }
+            for response in section.responses! {
+                objects.append(response)
+            }
+        }
+        
+        vc.objects = objects
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+
         
     }
 
     @IBAction func seeJsonButtonTapped(sender: AnyObject) {
+        let licenseView : QLPreviewController = QLPreviewController()
+        licenseView.delegate = self
+        licenseView.dataSource = self
+        self.presentViewController(licenseView, animated:true, completion:nil)
+        self.previewController(licenseView, previewItemAtIndex: 0)
         
     }
+    
+    func numberOfPreviewItemsInPreviewController(controller: QLPreviewController) -> Int {
+        return 1
+    }
+    
+    func previewController(controller: QLPreviewController, previewItemAtIndex index: Int) -> QLPreviewItem {
+        let bundle = NSBundle.mainBundle()
+        let path = bundle.pathForResource("content", ofType: "json")
+        let url : NSURL = NSURL(fileURLWithPath: path!)
+        return url
+    }
+    
+    
+    
 
     @IBAction func twitterButtonTapped(sender: AnyObject) {
         let svc = SFSafariViewController(URL: NSURL(string: "https://twitter.com/_patmurray")!)

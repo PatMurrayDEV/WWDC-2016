@@ -23,7 +23,7 @@ class MessagesManager: NSObject {
     var delegate:chatViewer! = nil
     var seenArray: [Int] = [Int]()
     
-    
+    static let sharedInstance = MessagesManager()
     
     
     func loadMessages()  {
@@ -156,6 +156,10 @@ class MessagesManager: NSObject {
             }
         }
         
+    }
+    
+    func getAll() -> [MessageSection] {
+        return messages
     }
     
     func nextSection(sectionID: Int) {

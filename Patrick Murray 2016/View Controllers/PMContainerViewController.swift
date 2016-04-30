@@ -18,7 +18,7 @@ class PMContainerViewController: UIViewController, chatViewer, ResponseProtocol 
     var mastVC : MasterViewController = MasterViewController()
     var respVC : PMResponsesTableViewController = PMResponsesTableViewController()
     
-    let messagesManager = MessagesManager()
+    let messagesManager = MessagesManager.sharedInstance
 
 
     override func viewDidLoad() {

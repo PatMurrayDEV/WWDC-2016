@@ -131,23 +131,19 @@ struct Message: ChatMessage, Decodable {
         
         
         if self.remoteURL != nil {
-            let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: self.remoteURL!)!, completionHandler: { (data, response, error) -> Void in
+
+            do {
+                let string : String = try String(contentsOfURL: NSURL(string: remoteURL!)!, encoding: NSUTF8StringEncoding)
                 if let lead = self.textPrefix {
-                    if let str =  NSString(data: data!, encoding: NSUTF8StringEncoding) {
+                    if let str : String = string {
                         self.text = "\(lead) \(str as String)"
-                    } else {
-                        self.text = "\(lead) ... [NETWORK ERROR]"
-                    }
-                } else {
-                    if let str =  NSString(data: data!, encoding: NSUTF8StringEncoding) {
-                        self.text = str as String
-                    } else {
-                        self.text = "[NETWORK ERROR]"
                     }
                 }
+            } catch _ {
                 
-            })
-            task.resume()
+            }
+
+
         }
         
         

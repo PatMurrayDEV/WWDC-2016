@@ -284,7 +284,7 @@
         <!--Master-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
-                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="Patrick_Murray_2016" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="mainMessages" title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="Patrick_Murray_2016" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="180" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -580,7 +580,7 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <gestureRecognizers/>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AO-Cn-2ef">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AO-Cn-2ef" customClass="PMButton" customModule="Patrick_Murray_2016" customModuleProvider="target">
                                             <rect key="frame" x="255" y="548" width="90" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="OKR-Wy-0Nm"/>
@@ -589,17 +589,42 @@
                                             <state key="normal" title="Close">
                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                    <color key="value" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="closeButtonTapped:" destination="TJq-Pm-8rm" eventType="touchUpInside" id="RS0-xG-3Hm"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tilt device" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAb-W9-1L5">
+                                            <rect key="frame" x="549" y="566" width="43" height="26"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="5sc-qr-jCP"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="V7e-IX-7Pq"/>
+                                                <constraint firstAttribute="height" constant="26" id="oX4-PB-OMi"/>
+                                                <constraint firstAttribute="width" constant="43" id="yrR-JH-WKy"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="7AO-Cn-2ef" firstAttribute="top" secondItem="Roq-1o-Zbj" secondAttribute="bottom" constant="8" id="0wy-gR-0pR"/>
                                         <constraint firstItem="Roq-1o-Zbj" firstAttribute="leading" secondItem="BwL-mw-zt4" secondAttribute="leading" constant="30" id="KH5-U6-uW8"/>
                                         <constraint firstAttribute="bottom" secondItem="Roq-1o-Zbj" secondAttribute="bottom" constant="60" id="M9t-99-eSL"/>
                                         <constraint firstItem="7AO-Cn-2ef" firstAttribute="centerX" secondItem="BwL-mw-zt4" secondAttribute="centerX" id="PM8-QB-z7A"/>
+                                        <constraint firstAttribute="bottom" secondItem="LAb-W9-1L5" secondAttribute="bottom" constant="8" id="ZQl-rF-Amk"/>
                                         <constraint firstItem="Roq-1o-Zbj" firstAttribute="top" secondItem="BwL-mw-zt4" secondAttribute="top" constant="30" id="a5P-cn-eVf"/>
+                                        <constraint firstAttribute="trailing" secondItem="LAb-W9-1L5" secondAttribute="trailing" constant="8" id="cYR-6E-atO"/>
                                         <constraint firstAttribute="bottom" secondItem="7AO-Cn-2ef" secondAttribute="bottom" constant="22" id="feR-nx-08A"/>
                                         <constraint firstAttribute="trailing" secondItem="Roq-1o-Zbj" secondAttribute="trailing" constant="30" id="iiy-W8-xOW"/>
                                     </constraints>
@@ -614,20 +639,12 @@
                             <constraint firstItem="fhh-nO-kHB" firstAttribute="leading" secondItem="PsB-7f-hmV" secondAttribute="leading" id="azE-89-96i"/>
                             <constraint firstAttribute="trailing" secondItem="fhh-nO-kHB" secondAttribute="trailing" id="qaf-tR-GeV"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="2dm-du-leA" appends="YES" id="9OF-Vb-Kiw"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="containerView" destination="Roq-1o-Zbj" id="ENo-1a-jXY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BwU-Bm-Dg8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="2dm-du-leA">
-                    <connections>
-                        <action selector="handleGesture:" destination="TJq-Pm-8rm" id="Aww-o1-0jN"/>
-                    </connections>
-                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1529" y="199"/>
         </scene>

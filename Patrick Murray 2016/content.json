@@ -251,7 +251,7 @@
     "responses": [
       {
         "title": "What's your background in computing?",
-        "text": "So you like programming I take it. What's your background in computing?",
+        "text": "So you like programming I take it. What's your background in computing? 🖥",
         "next": 214
       }
     ]
@@ -415,7 +415,7 @@
         "text": "In high school I was heavily involved in the production crew, specialising in theatrical lighting. 🎭"
       },
       {
-        "text": "I love travelling. I think the only way to know yourself is to explore the world. I have a map of the world on my wall that I hope to oe day have completely coloured in!"
+        "text": "I love travelling. I think the only way to know yourself is to explore the world. I have a map of the world on my wall that I hope to one day have completely coloured in!"
       },
       {
         "text": "And finally, drum roll please…"
@@ -455,7 +455,7 @@
         "text": "In December 2015 I started an internship at The Star Entertainment Group in Sydney. They own and operate some casinos in Australia. "
       },
       {
-        "text": "For them I have worked on rebuilting the Kiosk project. "
+        "text": "For them I have worked on rebuilding the Kiosk project. "
       },
       {
         "text": "I have also continued to progress my most successful, and first (2010), app 'Gibbs Rules (from NCIS)', which has over 250,000 downloads and over 5,000 monthly active users. "
@@ -528,24 +528,6 @@
       },
       {
         "text": "And this is the validation engine I built for the password reset screen."
-      }
-    ],
-    "responses": [
-      {
-        "title": "Reciept Printer?",
-        "text": "Did you say somthing about a reciept Printer?",
-        "next": 4011
-      }
-    ]
-  },
-  {
-    "id": 4011,
-    "messages": [
-      {
-        "text": "Indeed, check this out: "
-      },
-      {
-        "video_url": "IMG_7692.m4v"
       },
       {
         "text": "Cool right?"
@@ -677,7 +659,7 @@
         "text": "The app as a whole has a 4.5 star rating and the current version has a ★★★★★ rating!!"
       },
       {
-        "text": "Building apps is awesome, builting apps others love is out of this world!"
+        "text": "Building apps is awesome, building apps others love is out of this world!"
       }
     ],
     "responses": [
@@ -751,7 +733,7 @@
         "content_url": "http://log.patmurraydev.com/current.php"
       },
       {
-        "text": "That's current as of less than fiften minutes ago. "
+        "text": "That's current as of less than fifteen minutes ago. "
       },
       {
         "text": "Using this link you can see the log:"
@@ -760,7 +742,7 @@
         "link_url": "http://log.patmurraydev.com"
       },
       {
-        "text": "Using a starter kit, and a few extra components, my dad and I built a little arduino that logs the temperature and humidity every 15 minutes to my server."
+        "text": "Using a starter kit, and a few extra components, my dad and I built a little Arduino that logs the temperature and humidity every 15 minutes to my server."
       },
       {
         "live_photo": "IMG_7720"
@@ -813,7 +795,7 @@
         "text": "I've also been playing around with the Transport for NSW live data for buses and trains trying to come up with a small app I could make there. "
       },
         {
-            "text": "I'm also deeply facinated by data, so I tried my best at a comprehensive stastical analysis of my year 2015, you can see here:"
+            "text": "I'm also deeply fascinated by data, so I tried my best at a comprehensive statistical analysis of my year 2015, you can see here:"
         },
         {
             "link_url": "http://2015.patmurray.co"
