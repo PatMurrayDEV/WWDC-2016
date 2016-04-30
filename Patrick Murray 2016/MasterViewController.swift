@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SafariServices
+
 
 class MasterViewController: UITableViewController {
 
@@ -134,6 +136,28 @@ class MasterViewController: UITableViewController {
                 let cell = tableView.dequeueReusableCellWithIdentifier("Cell_Map", forIndexPath: indexPath) as! PMMapTableViewCell
                 cell.loadMap(message.mapLoc!, pitch: message.pitch!, heading: message.heading!, showLandmarks: false, distance: message.distance!, placeholder: message.placeholderImage!)
                 return cell
+            } else if message.linkURL != nil {
+                let cell = tableView.dequeueReusableCellWithIdentifier("link_cell", forIndexPath: indexPath) as! PMChatTableViewCell
+                cell.messageLabel!.text = message.linkURL
+                return cell
+            } else if let livePhoto = message.livePhoto  {
+                
+                let image = UIImage(imageLiteral: livePhoto)
+                let cell = tableView.dequeueReusableCellWithIdentifier("Cell_Live", forIndexPath: indexPath) as! PMLivePhotoTableViewCell
+                
+                if image.size.height < 200 {
+                    cell.heightContrainst.constant = image.size.height
+                } else {
+                    cell.heightContrainst.constant = 200
+                }
+                
+                cell.placeholderImage = image
+                cell.imageURL = NSBundle.mainBundle().URLForResource(livePhoto, withExtension: "JPG")!
+                cell.videoURL = NSBundle.mainBundle().URLForResource(livePhoto, withExtension: "MOV")!
+                
+                cell.prepareLivePhoto()
+                
+                return cell
             }
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! PMChatTableViewCell
@@ -154,23 +178,39 @@ class MasterViewController: UITableViewController {
         return false
     }
 
-    
-//    override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-//        if cell is PMMapTableViewCell {
-//            let mapCell = cell as! PMMapTableViewCell
-//            mapCell.applyMapMemoryFix()
-//        }
-//    }
+
     
     
-    
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let object = objects[indexPath.row]
+        
+        if object is Message {
+            let message = object as! Message
+            if message.linkURL != nil {
+                let svc = SFSafariViewController(URL: NSURL(string: message.linkURL!)!)
+                self.presentViewController(svc, animated: true, completion: nil)
+            } else if let image = message.image {
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("imagePanorama") as! PMImageViewController
+                vc.image = image
+                self.presentViewController(vc, animated: true, completion: nil)
+                
+            }
+
+            
+        }
+        
+    }
 
 
 
 
 
 }
+
+
 
 
 

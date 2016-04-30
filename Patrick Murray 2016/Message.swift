@@ -61,8 +61,14 @@ struct Message: ChatMessage, Decodable {
     var placeholderImage: UIImage?
     
     //LINK
-    var linkURL: 
+    var linkURL: String?
     
+    //REMOTE CONTENT
+    var textPrefix: String?
+    var remoteURL: String?
+    
+    //LIVE PHOTO\\
+    var livePhoto: String?
     
     
     
@@ -105,6 +111,47 @@ struct Message: ChatMessage, Decodable {
                 self.placeholderImage = placeholderImageTemp
             }
         }
+        
+        if let linkURLContent : String = "link_url" <~~ json {
+            self.linkURL = linkURLContent
+        }
+        
+        if let textPrefixContent : String = "text_prefix" <~~ json {
+            self.textPrefix = textPrefixContent
+        }
+        
+        if let contentURLContent : String = "content_url" <~~ json {
+            self.remoteURL = contentURLContent
+        }
+        
+        
+        if let liveContent : String = "live_photo" <~~ json {
+            self.livePhoto = liveContent
+        }
+        
+        
+        if self.remoteURL != nil {
+            let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: self.remoteURL!)!, completionHandler: { (data, response, error) -> Void in
+                if let lead = self.textPrefix {
+                    if let str =  NSString(data: data!, encoding: NSUTF8StringEncoding) {
+                        self.text = "\(lead) \(str as String)"
+                    } else {
+                        self.text = "\(lead) ... [NETWORK ERROR]"
+                    }
+                } else {
+                    if let str =  NSString(data: data!, encoding: NSUTF8StringEncoding) {
+                        self.text = str as String
+                    } else {
+                        self.text = "[NETWORK ERROR]"
+                    }
+                }
+                
+            })
+            task.resume()
+        }
+        
+        
+        
         
     }
 }

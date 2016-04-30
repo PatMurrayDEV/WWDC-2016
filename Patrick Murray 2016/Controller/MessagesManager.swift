@@ -32,7 +32,7 @@ class MessagesManager: NSObject {
                 do {
                     let object = try NSJSONSerialization.JSONObjectWithData(jsonData, options: .AllowFragments)
                     messages = [MessageSection].fromJSONArray(object as! [JSON])
-                    print(messages)
+//                    print(messages)
                     displaySection(messages.first!)
                 } catch {
                     // Handle Error

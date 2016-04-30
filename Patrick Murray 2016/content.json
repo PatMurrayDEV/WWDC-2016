@@ -518,13 +518,13 @@
         "text": "OK, I got special permission to show these to your eyes only. The data is mock (obviously)."
       },
       {
-        "img_url": "sk_screen1"
+        "image_url": "sk_screen1"
       },
       {
         "text": "This is the Dashboard that is shown when the user swipes in."
       },
       {
-        "img_url": "sk_screen2"
+        "image_url": "sk_screen2"
       },
       {
         "text": "And this is the validation engine I built for the password reset screen."
@@ -604,10 +604,10 @@
         "text": "Along with being my first released app, it is also my most successful, currently over 250,000 downloads since December 2010."
       },
       {
-        "img_url": "gr_1"
+        "image_url": "gr_1"
       },
       {
-        "img_url": "gr_2"
+        "image_url": "gr_2"
       },
       {
         "link_url": "http://rules.patmurray.co"
@@ -636,7 +636,7 @@
         "text": "Cool!"
       },
       {
-        "text": "Late last year I decided to release a majr overhaul of the app"
+        "text": "Late last year I decided to release a major overhaul of the app"
       },
       {
         "text": "It took me a few months to finish, but the new version included awesome new technologies like a full support for Spotlight Search for all the rules and the user's favourite rules"
@@ -811,7 +811,13 @@
       },
       {
         "text": "I've also been playing around with the Transport for NSW live data for buses and trains trying to come up with a small app I could make there. "
-      }
+      },
+        {
+            "text": "I'm also deeply facinated by data, so I tried my best at a comprehensive stastical analysis of my year 2015, you can see here:"
+        },
+        {
+            "link_url": "http://2015.patmurray.co"
+        }
     ],
     "responses": [
       {
