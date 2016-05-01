@@ -732,14 +732,7 @@
     "id": 403,
     "messages": [
       {
-        "text_prefix": "The temperature in my room is: ",
-        "content_url": "http://log.patmurraydev.com/current.php"
-      },
-      {
-        "text": "That's current as of less than fifteen minutes ago. "
-      },
-      {
-        "text": "Using this link you can see the log:"
+        "text": "You can see the current and historical climate using this link:"
       },
       {
         "link_url": "http://log.patmurraydev.com"
